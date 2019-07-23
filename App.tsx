@@ -1,29 +1,13 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
+import HomeScreen from './src/pages/Homescreen';
+import ProfilePage from './src/pages/ProfilePage';
 
-export default class HelloWorldApp extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Hello, world!</Text>
-        <Text style={{color: "red"}}>I'm Wukong</Text>
-      </View>
-    );
-  }
-}
-
-/*
-  <View style={styles.container}>
-      <Text>Hello</Text>
-      <TextInput></TextInput>
-    </View>
-
-  const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const MainNavigator = createStackNavigator({
+  Home: {screen: HomeScreen},
+  Profile: {screen: ProfilePage},
 });
-*/
+
+const App = createAppContainer(MainNavigator);
+export default App;
