@@ -6,12 +6,18 @@ export default class HelloWorldApp extends Component {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text>Hello, world!</Text>
+        <Text style={{color: "red"}}>I'm Wukong</Text>
       </View>
     );
   }
 }
 
 /*
+  <View style={styles.container}>
+      <Text>Hello</Text>
+      <TextInput></TextInput>
+    </View>
+
   const styles = StyleSheet.create({
   container: {
     flex: 1,
