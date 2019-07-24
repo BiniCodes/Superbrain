@@ -14,7 +14,11 @@ export default  class  ProfilePage extends React.Component<IProfilePageProps> {
     render() {
         const {navigate} = this.props.navigation;
       return (
-      <Text>{this.props.navigation.getParam('name','DEFUALT')}</Text>
+      /*<Text>{this.props.navigation.getParam('name','DEFAULT')}</Text>*/
+      <Button
+        title="Go to the third page"
+        onPress={() => navigate("Third")}
+      />
       );
     }
   }
