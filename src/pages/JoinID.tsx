@@ -7,7 +7,7 @@ interface IProfilePageProps  {
 }
 
 
-export default  class  ProfilePage extends React.Component<IProfilePageProps> {
+export default  class  JoinID extends React.Component<IProfilePageProps> {
     static navigationOptions = {
       title: 'Profile',
     };
@@ -17,8 +17,8 @@ export default  class  ProfilePage extends React.Component<IProfilePageProps> {
       /*<Text>{this.props.navigation.getParam('name','DEFAULT')}</Text>*/
       <View>
         <Button
-          title="Join ID"
-          onPress={() => navigate("Third")}
+          title="Scotty beam mich hoch"
+          onPress={() => navigate("")}
         />
       </View>
       );
