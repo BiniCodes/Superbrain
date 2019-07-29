@@ -1,4 +1,4 @@
-import { Text, Button } from "react-native";
+import {View, Text, Button } from "react-native";
 import React from "react";
 
 interface IProfilePageProps  {
@@ -15,10 +15,12 @@ export default  class  ProfilePage extends React.Component<IProfilePageProps> {
         const {navigate} = this.props.navigation;
       return (
       /*<Text>{this.props.navigation.getParam('name','DEFAULT')}</Text>*/
-      <Button
-        title="Go to the third page"
-        onPress={() => navigate("Third")}
-      />
+      <View>
+        <Button
+          title="Join ID"
+          onPress={() => navigate("Third")}
+        />
+      </View>
       );
     }
   }
