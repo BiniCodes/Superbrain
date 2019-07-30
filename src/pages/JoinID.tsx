@@ -1,6 +1,6 @@
 import {View, Text, Button } from "react-native";
 import React from "react";
-import Headline from "../components/headline";
+import Headline from "../components/Headline";
 
 interface IProfilePageProps  {
     name: string,
@@ -17,10 +17,12 @@ export default  class  JoinID extends React.Component<IProfilePageProps> {
       return (
       /*<Text>{this.props.navigation.getParam('name','DEFAULT')}</Text>*/
       <View>
+          
           <Headline
               message="hello ID"
               fontSize={20}
             />
+          
         <Button
           title="Scotty beam mich hoch"
           onPress={() => navigate("")}

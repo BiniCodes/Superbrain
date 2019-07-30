@@ -29,14 +29,16 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
               marginVertical =  {30}
               backgroundColor = "#247BA0"
               nextPage = "JoinID"
+              handleOnPress={navigate("JoinID")}
             />
-            <BigButton
+            {/* <BigButton
               message="create ID"
               //vertical = senkrecht!!
               marginVertical =  {30}
               backgroundColor = "#70C1B3"
               nextPage = "JoinID"
-            />
+              handleOnPress={navigate("JoinID")}
+            /> */}
 
         </View>
       );

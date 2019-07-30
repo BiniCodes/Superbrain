@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {StyleSheet ,View, Button, Text, TouchableOpacity} from "react-native";
+import {StyleSheet ,View, Button, Text, TouchableOpacity, GestureResponderEvent} from "react-native";
 import { NavigationScreenProps, NavigationProp } from "react-navigation";
 
 interface IButtonScreenProps {
@@ -7,6 +7,7 @@ interface IButtonScreenProps {
     marginVertical: number,
     backgroundColor: string,
     nextPage: string,
+    handleOnPress: (event: GestureResponderEvent) => void
 }
 
 export default class BigButton extends Component<IButtonScreenProps>{
@@ -16,8 +17,8 @@ export default class BigButton extends Component<IButtonScreenProps>{
         const backgroundColor = this.props.backgroundColor;
         const nextPage = this.props.nextPage;
         return(
-            <View>
-                <TouchableOpacity onPress={() => navigate({nextPage})} activeOpacity={2}>
+            <View>onPress
+                <TouchableOpacity onPress={this.props.handleOnPress} activeOpacity={2}>
                     <View style={{
                         marginVertical: marginVertical,
                         paddingHorizontal: 40,
