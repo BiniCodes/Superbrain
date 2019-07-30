@@ -10,23 +10,23 @@ interface IProfilePageProps  {
 
 export default  class  JoinID extends React.Component<IProfilePageProps> {
     static navigationOptions = {
-      title: 'Profile',
+      title: 'Join ID',
     };
     render() {
         const {navigate} = this.props.navigation;
       return (
-      /*<Text>{this.props.navigation.getParam('name','DEFAULT')}</Text>*/
       <View>
           
-          <Headline
-              message="hello ID"
-              fontSize={20}
-            />
+        <Headline
+            message="Enter your ID"
+            fontSize={20}
+          />
           
         <Button
           title="Scotty beam mich hoch"
           onPress={() => navigate("")}
         />
+        
       </View>
       );
     }

@@ -1,14 +1,15 @@
 import {StyleSheet ,View, Button, Text, TouchableOpacity} from "react-native";
 import React from "react";
 import { any } from "prop-types";
-import { NavigationScreenProps, NavigationProp } from "react-navigation";
+import { NavigationScreenProps, NavigationProp, NavigationScreenProp, NavigationState, NavigationParams } from "react-navigation";
 import Headline from "../components/Headline";
 import BigButton from "../components/BigButton";
+import { DARK_GREEN, DARK_BLUE, LIGHT_GREEN, LIGHT_YELLOW } from "../constans";
+import CustomizeButton from "../components/CustomizeButton";
 
 interface IHomeScreenProps  {
-    navigation: any
+    navigation: NavigationScreenProp<NavigationState, NavigationParams>
 }
-
 
 
 export default class HomeScreen extends React.Component<IHomeScreenProps> {
@@ -21,24 +22,47 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
         <View>
             <Headline
               message="Superbrain"
-              fontSize={20}
+              textAlign="center"
+              marginVertical= {20}
             />
+
+            <Headline
+              message="This app is for all people who want
+                      want to compare their grades anonymously"
+              textAlign="center"
+              marginHorizontal={40}
+            />
+            
             <BigButton
-              message="join ID"
+              message="join private leaderboard"
               //vertical = senkrecht!!
-              marginVertical =  {30}
-              backgroundColor = "#247BA0"
-              nextPage = "JoinID"
-              handleOnPress={navigate("JoinID")}
+              backgroundColor = {DARK_GREEN}  
+              handleOnPress={() => navigate('JoinID')}
             />
-            {/* <BigButton
-              message="create ID"
-              //vertical = senkrecht!!
-              marginVertical =  {30}
-              backgroundColor = "#70C1B3"
-              nextPage = "JoinID"
-              handleOnPress={navigate("JoinID")}
-            /> */}
+
+            <BigButton
+              message="create private leaderboard"
+              backgroundColor = {DARK_BLUE} 
+              handleOnPress={() => navigate('JoinID')}
+            />
+
+            <BigButton
+              message="International leaderboard"
+              backgroundColor = {LIGHT_GREEN}
+              handleOnPress={() => navigate('JoinID')}
+            />
+            
+            <CustomizeButton
+              message="instruction"
+              backgroundColor = {LIGHT_YELLOW}
+              marginTop = {50}
+              fontSize = {15}
+              marginHorizontal = {140}
+              paddingVertical = {10}
+              textAlign = "center"
+              handleOnPress={() => navigate("JoinID")}
+            />
+
 
         </View>
       );

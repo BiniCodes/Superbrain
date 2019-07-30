@@ -1,55 +1,46 @@
 import React, { Component } from "react";
 import {StyleSheet ,View, Button, Text, TouchableOpacity, GestureResponderEvent} from "react-native";
-import { NavigationScreenProps, NavigationProp } from "react-navigation";
+import { NavigationScreenProp,
+         NavigationState,
+         NavigationParams,
+         withNavigation
+        } from "react-navigation";
+import { BTN_DEFAULT_PADDING, MARGIN_DEFAULT, FONTSIZE_DEFAULT } from "../constans";
 
 interface IButtonScreenProps {
     message: string,
-    marginVertical: number,
     backgroundColor: string,
-    nextPage: string,
-    handleOnPress: (event: GestureResponderEvent) => void
+    handleOnPress: () => void
 }
+
 
 export default class BigButton extends Component<IButtonScreenProps>{
     render() {
         const message = this.props.message;
-        const marginVertical = this.props.marginVertical;
         const backgroundColor = this.props.backgroundColor;
-        const nextPage = this.props.nextPage;
         return(
-            <View>onPress
-                <TouchableOpacity onPress={this.props.handleOnPress} activeOpacity={2}>
-                    <View style={{
-                        marginVertical: marginVertical,
-                        paddingHorizontal: 40,
-                        paddingVertical: 30,
-                        backgroundColor: backgroundColor,
+            <TouchableOpacity
+                onPress={this.props.handleOnPress}
+                activeOpacity={2}>
+                
+                <View style={{
+                    marginVertical: 20,
+                    marginHorizontal: 30,
+                    paddingVertical: 20,
+                    backgroundColor: backgroundColor,
+                    
+                }}>
+
+                    <Text style={{
+                        fontSize: 25,
+                        textAlign: "center"
                     }}>
-                        <Text style={{
-                            fontSize: 40,
-                            textAlign: "center"
-                        }}>
-                            {message}
-                        </Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
+                        {message}
+                    </Text>
+                
+                </View>
+            
+            </TouchableOpacity>
         );
     }
 }
-
-
-{/*}
-
-  <TouchableOpacity onPress={() => navigate('JoinID')} activeOpacity={2}>
-    <View style={bigButton.darkblue}>
-        <Text style={styles.headline}>join ID</Text>
-    </View>
-  </TouchableOpacity> 
-
-*/}
-
-
-
-
-
