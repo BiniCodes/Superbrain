@@ -1,14 +1,14 @@
 import {View, Text, Button } from "react-native";
 import React from "react";
 import Headline from "../components/Headline";
+import {NavigationScreenProp, NavigationState, NavigationParams } from "react-navigation";
 
 interface IProfilePageProps  {
-    name: string,
-    navigation: any
+  navigation: NavigationScreenProp<NavigationState, NavigationParams>
 }
 
 
-export default  class  JoinID extends React.Component<IProfilePageProps> {
+export default  class  JoinLeaderboard extends React.Component<IProfilePageProps> {
     static navigationOptions = {
       title: 'Join ID',
     };
@@ -19,7 +19,7 @@ export default  class  JoinID extends React.Component<IProfilePageProps> {
           
         <Headline
             message="Enter your ID"
-            fontSize={20}
+            fontSize={50}
           />
           
         <Button
