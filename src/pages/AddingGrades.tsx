@@ -10,31 +10,19 @@ interface IProfilePageProps  {
 }
 
 
-export default  class  JoinLeaderboard extends React.Component<IProfilePageProps> {
+export default  class  AddingGrades extends React.Component<IProfilePageProps> {
     static navigationOptions = {
-      title: 'Join ID',
+      title: 'Max-Planck-Schule Kiel Q1.c',
     };
     render() {
         const {navigate} = this.props.navigation;
       return (
       <View>
           
-        <Headline
-          message = "enter your code"
-          fontSize = {30}
-          textAlign = "center"
-          marginTop = {100}
-          marginBottom = {60}
-        />
-          
         <CustomizeButton
-          message ="continue"
-          backgroundColor = {DARK_GREEN}
-          marginHorizontal = {100}
-          textAlign = "center"
-          paddingVertical = {15}
-          fontSize = {20}
-          handleOnPress={() => navigate("AddingGrade")}
+          message="continue"
+          backgroundColor= {DARK_GREEN}
+          handleOnPress={() => navigate("Home")}
         />
         
       </View>
