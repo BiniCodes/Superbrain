@@ -13,7 +13,7 @@ interface IHomeScreenProps  {
 
 export default class HomeScreen extends React.Component<IHomeScreenProps> {
     static navigationOptions = {
-      title: 'Welcome to this App',
+      title: 'Welcome to Superbrain',
     };
     render() {
       const {navigate} = this.props.navigation;
@@ -22,7 +22,8 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
             <Headline
               message="Superbrain"
               textAlign="center"
-              marginVertical= {20}
+              marginTop={20}
+              marginBottom={10}
             />
 
             <Headline
@@ -30,6 +31,7 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
                       want to compare their grades anonymously"
               textAlign="center"
               marginHorizontal={40}
+              fontSize={15}
             />
             
             <BigButton
@@ -54,9 +56,9 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
             <CustomizeButton
               message="instruction"
               backgroundColor = {LIGHT_YELLOW}
-              marginTop = {50}
+              marginTop = {30}
               fontSize = {15}
-              marginHorizontal = {140}
+              marginHorizontal = {110}
               paddingVertical = {10}
               textAlign = "center"
               handleOnPress={() => navigate("JoinLeaderboard")}

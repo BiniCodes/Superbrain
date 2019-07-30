@@ -1,5 +1,5 @@
 export const BTN_DEFAULT_PADDING = 0;
-export const DARK_BLUE = "#247BA0";
+export const DARK_BLUE = "#77b6d1";
 export const DARK_GREEN = "#70C1B3";
 export const LIGHT_GREEN = "#B2DBBF";
 export const LIGHT_YELLOW = "#F3FFBD";

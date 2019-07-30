@@ -18,8 +18,11 @@ export default  class  JoinLeaderboard extends React.Component<IProfilePageProps
       <View>
           
         <Headline
-            message="Enter your ID"
-            fontSize={50}
+            message="enter your code"
+            fontSize={30}
+            textAlign="center"
+            marginTop={100}
+            marginBottom={60}
           />
           
         <Button
