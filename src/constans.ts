@@ -1,0 +1,9 @@
+export const BTN_DEFAULT_PADDING = 0;
+export const DARK_BLUE = "#247BA0";
+export const DARK_GREEN = "#70C1B3";
+export const LIGHT_GREEN = "#B2DBBF";
+export const LIGHT_YELLOW = "#F3FFBD";
+export const BRIGHT_RED = "#FF1654";
+export const MARGIN_DEFAULT = 0;
+export const FONTSIZE_DEFAULT = 20;
+export const TEXTALIGN_DEFAULT = "left";
