@@ -44,7 +44,7 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
             <BigButton
               message="create private leaderboard"
               backgroundColor = {DARK_BLUE} 
-              handleOnPress={() => navigate('JoinLeaderboard')}
+              handleOnPress={() => navigate('CreateLeaderboard')}
             />
 
             <BigButton
