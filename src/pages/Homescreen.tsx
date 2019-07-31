@@ -28,7 +28,7 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
 
             <Headline
               message="This app is for all people who want
-                      want to compare their grades anonymously"
+                      to compare their grades anonymously"
               textAlign="center"
               marginHorizontal={40}
               fontSize={15}

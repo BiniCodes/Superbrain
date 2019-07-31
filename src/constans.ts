@@ -7,3 +7,6 @@ export const BRIGHT_RED = "#FF1654";
 export const MARGIN_DEFAULT = 0;
 export const FONTSIZE_DEFAULT = 20;
 export const TEXTALIGN_DEFAULT = "left";
+export const MAXLENGTH_NUMBER_DEFAULT = 1;
+export const HEIGHT_DEFAULT = 40;
+export const BORDERWIDTH_DEFAULT = 1;
