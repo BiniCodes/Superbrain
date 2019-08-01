@@ -40,7 +40,7 @@ export default  class  InterQuest4 extends React.Component<IInterQuest4PageProps
           height = {40}
           borderColor = {LIGHT_GREEN}
           borderWidth = {1}
-          placeholder = "Stadt"
+          placeholder = "Schule"
         />
 
 
