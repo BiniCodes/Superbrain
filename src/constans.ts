@@ -10,3 +10,4 @@ export const TEXTALIGN_DEFAULT = "left";
 export const MAXLENGTH_NUMBER_DEFAULT = 1;
 export const HEIGHT_DEFAULT = 40;
 export const BORDERWIDTH_DEFAULT = 1;
+export const BACKGROUND_COLOR_DEFAULT = "#ffffff"

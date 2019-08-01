@@ -5,12 +5,16 @@ import HomeScreen from './src/pages/Homescreen';
 import JoinLeaderboard from './src/pages/JoinLeaderboard';
 import AddingGrades from './src/pages/AddingGrades';
 import CreateLeaderboard from './src/pages/CreateLeaderboard';
+import JoinInternational from './src/pages/JoinInternational';
+import InterQuest2 from './src/pages/InterQuest2';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
   JoinLeaderboard: {screen: JoinLeaderboard},
   AddingGrade: {screen: AddingGrades},
   CreateLeaderboard: {screen: CreateLeaderboard},
+  JoinInternational: {screen: JoinInternational},
+  InterQuest2: {screen: InterQuest2},
 });
 
 const App = createAppContainer(MainNavigator);

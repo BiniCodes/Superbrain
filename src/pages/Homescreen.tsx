@@ -33,6 +33,12 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
               marginHorizontal={40}
               fontSize={15}
             />
+
+            <BigButton
+              message="International leaderboard"
+              backgroundColor = {LIGHT_GREEN}
+              handleOnPress={() => navigate('JoinInternational')}
+            />
             
             <BigButton
               message="join private leaderboard"
@@ -47,11 +53,7 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
               handleOnPress={() => navigate('CreateLeaderboard')}
             />
 
-            <BigButton
-              message="International leaderboard"
-              backgroundColor = {LIGHT_GREEN}
-              handleOnPress={() => navigate('JoinLeaderboard')}
-            />
+            
             
             <CustomizeButton
               message="instruction"
