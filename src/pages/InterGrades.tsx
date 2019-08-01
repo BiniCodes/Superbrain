@@ -6,12 +6,12 @@ import ContinueButtonBottom from "../components/ContinueButtonBottom";
 import WordsInput from "../components/WordsInput";
 import { LIGHT_GREEN } from "../constans";
 
-interface IInterGradePageProps  {
+interface IInterGradesPageProps  {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
 }
 
 
-export default  class  InterGrade extends React.Component<IInterGradePageProps> {
+export default  class  InterGrades extends React.Component<IInterGradesPageProps> {
   static navigationOptions = {
     title: 'Joining leaderboard 6 out 6',
   };

@@ -47,7 +47,7 @@ export default  class  InterQuest5 extends React.Component<IInterQuest5PageProps
         </View>
 
         <ContinueButtonBottom
-          handleOnPress={() => navigate("Home")}
+          handleOnPress={() => navigate("InterGrades")}
         />
 
       </View>
