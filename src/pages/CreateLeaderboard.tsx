@@ -8,6 +8,7 @@ import Subject from "../components/Subject";
 import { DARK_BLUE, DARK_GREEN } from "../constans";
 import CustomizeButton from "../components/CustomizeButton";
 import ContinueButton from "../components/ContinueButton";
+import ContinueButtonBottom from "../components/ContinueButtonBottom";
 
 interface ICreateLeaderboardProps  {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -31,7 +32,6 @@ export default  class  CreateLeaderboard extends React.Component<ICreateLeaderbo
           return(
             <Subject
               //message= {i + " " + Subject[i]}
-              message= "hello"
             />
           )
         }
@@ -44,29 +44,29 @@ export default  class  CreateLeaderboard extends React.Component<ICreateLeaderbo
           justifyContent: "center",
           }}>
           
-          <ScrollView style={{flex:1, backgroundColor: '#32a852'}}>
-            <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facerLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer</Text>
+          <ScrollView style={{flex:1}}>
+            <Subject message= {SubjectsList[0]}/>
+            <Subject message= {SubjectsList[1]}/>
+            <Subject message= {SubjectsList[2]}/>
+            <Subject message= {SubjectsList[3]}/>
+            <Subject message= {SubjectsList[4]}/>
+            <Subject message= {SubjectsList[5]}/>
+            <Subject message= {SubjectsList[6]}/>
+            <Subject message= {SubjectsList[7]}/>
+            <Subject message= {SubjectsList[8]}/>
+            <Subject message= {SubjectsList[9]}/>
+            <Subject message= {SubjectsList[10]}/>
+            <Subject message= {SubjectsList[11]}/>
+            <Subject message= {SubjectsList[12]}/>
+            <Subject message= {SubjectsList[13]}/>
+            <Subject message= {SubjectsList[14]}/>
+            <Subject message= {SubjectsList[15]}/>
           </ScrollView>
           
-          <View style={{height: 100, backgroundColor: '#515c54'}}>
-              <ContinueButton
-                handleOnPress={() => navigate("Home")}
-              />
+          <ContinueButtonBottom
+            handleOnPress={() => navigate("Home")}
+          />
 
-          </View>
-          
         </View>
       );
     }
