@@ -6,14 +6,14 @@ import ContinueButtonBottom from "../components/ContinueButtonBottom";
 import WordsInput from "../components/WordsInput";
 import { LIGHT_GREEN } from "../constans";
 
-interface IInterQuest2PageProps  {
+interface IInterQuest4PageProps  {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
 }
 
 
-export default  class  InterQuest2 extends React.Component<IInterQuest2PageProps> {
+export default  class  InterQuest4 extends React.Component<IInterQuest4PageProps> {
   static navigationOptions = {
-    title: 'Joining leaderboard 1 out 6',
+    title: 'Joining leaderboard 3 out 6',
   };
   render() {
     const {navigate} = this.props.navigation;
@@ -26,7 +26,7 @@ export default  class  InterQuest2 extends React.Component<IInterQuest2PageProps
         
         <View style={{flex:1}}>
           <Headline
-            message = "In which state do you live?"
+            message = "What is the name of your school?"
             fontSize = {25}
             textAlign = "center"
             marginTop = {100}
@@ -40,14 +40,14 @@ export default  class  InterQuest2 extends React.Component<IInterQuest2PageProps
           height = {40}
           borderColor = {LIGHT_GREEN}
           borderWidth = {1}
-          placeholder = "Bundesland"
+          placeholder = "Stadt"
         />
 
 
         </View>
 
         <ContinueButtonBottom
-          handleOnPress={() => navigate("InterQuest3")}
+          handleOnPress={() => navigate("InterQuest5")}
         />
 
       </View>

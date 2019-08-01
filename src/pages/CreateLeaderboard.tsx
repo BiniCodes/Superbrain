@@ -1,13 +1,7 @@
-import {View, Text, Button, StyleSheet, ScrollView } from "react-native";
+import {View, ScrollView } from "react-native";
 import React from "react";
-import Headline from "../components/Headline";
-import {NavigationScreenProp, NavigationState, NavigationParams, } from "react-navigation";
-import { TextInput } from "react-native-gesture-handler";
-import NumberInput from "../components/NumberInput";
+import {NavigationScreenProp, NavigationState, NavigationParams} from "react-navigation";
 import Subject from "../components/Subject";
-import { DARK_BLUE, DARK_GREEN } from "../constans";
-import CustomizeButton from "../components/CustomizeButton";
-import ContinueButton from "../components/ContinueButton";
 import ContinueButtonBottom from "../components/ContinueButtonBottom";
 
 interface ICreateLeaderboardProps  {
@@ -62,7 +56,7 @@ export default  class  CreateLeaderboard extends React.Component<ICreateLeaderbo
             <Subject message= {SubjectsList[14]}/>
             <Subject message= {SubjectsList[15]}/>
           </ScrollView>
-          
+
           <ContinueButtonBottom
             handleOnPress={() => navigate("Home")}
           />
