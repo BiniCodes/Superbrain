@@ -15,8 +15,9 @@ export default class Leaderboard extends Component<ILeaderboardProps>{
         let ReturnSubjects = [];
         for (let item of this.SubjectsList) {
           ReturnSubjects.push(
-          <View style={{flexDirection: "row", justifyContent: "space-between"}}>
+          <View key={item} style={{flexDirection: "row", justifyContent: "space-between"}}>
             <Subject message={item}/>
+            
             <GradesInput
                 maxLength = {1}
                 height = {50}
