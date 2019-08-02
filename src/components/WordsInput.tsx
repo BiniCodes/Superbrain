@@ -17,7 +17,7 @@ interface IWordsInputScreenProps {
 }
 
 
-
+//example how to use Wordsinput is in InterQuest4
 export default class WordsInput extends Component<IWordsInputScreenProps> {
     
     render() {
