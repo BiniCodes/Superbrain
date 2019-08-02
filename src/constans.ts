@@ -1,5 +1,5 @@
 export const BTN_DEFAULT_PADDING = 0;
-export const DARK_BLUE = "#247BA0";
+export const DARK_BLUE = "#77b6d1";
 export const DARK_GREEN = "#70C1B3";
 export const LIGHT_GREEN = "#B2DBBF";
 export const LIGHT_YELLOW = "#F3FFBD";
@@ -7,3 +7,10 @@ export const BRIGHT_RED = "#FF1654";
 export const MARGIN_DEFAULT = 0;
 export const FONTSIZE_DEFAULT = 20;
 export const TEXTALIGN_DEFAULT = "left";
+export const MAXLENGTH_NUMBER_DEFAULT = 1;
+export const HEIGHT_DEFAULT = 40;
+export const BORDERWIDTH_DEFAULT = 1;
+export const BACKGROUND_COLOR_DEFAULT = "#ffffff";
+export const DROPDOWN_HEIGHT_DEFAULT = 50;
+export const DROPDOWN_WIDTH_DEFAULT = 150;
+export const View_Align_Default = "";

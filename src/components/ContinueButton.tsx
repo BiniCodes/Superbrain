@@ -1,32 +1,25 @@
 import React, { Component } from "react";
 import {StyleSheet ,View, Button, Text, TouchableOpacity, GestureResponderEvent} from "react-native";
-import { BTN_DEFAULT_PADDING, MARGIN_DEFAULT, FONTSIZE_DEFAULT, TEXTALIGN_DEFAULT, BACKGROUND_COLOR_DEFAULT } from "../constans";
+import { BTN_DEFAULT_PADDING, MARGIN_DEFAULT, FONTSIZE_DEFAULT, TEXTALIGN_DEFAULT, BACKGROUND_COLOR_DEFAULT, DARK_GREEN } from "../constans";
 
-interface IMidSizeButtonScreenProps {
-    message: string,
-    backgroundColor?: string,
+interface IContinueButtonScreenProps {
     marginVertical?: number,
     paddingVertical?: number,
     paddingHorizontal?: number,
-    fontSize?: number,
-    textAlign?: string,
     marginHorizontal?: number,
     marginTop?: number,
     handleOnPress: () => void
 }
 
 
-export default class CustomizeButton extends Component<IMidSizeButtonScreenProps>{
+export default class ContinueButton extends Component<IContinueButtonScreenProps>{
     render() {
-        const message = this.props.message;
         const marginVertical = this.props.marginVertical? this.props.marginVertical : MARGIN_DEFAULT;
         const marginHorizontal = this.props.marginHorizontal? this.props.marginHorizontal : MARGIN_DEFAULT;
-        const backgroundColor = this.props.backgroundColor? this.props.backgroundColor : BACKGROUND_COLOR_DEFAULT;
         const paddingVertical = this.props.paddingVertical ? this.props.paddingVertical : BTN_DEFAULT_PADDING;
         const paddingHorizontal = this.props.paddingHorizontal? this.props.paddingHorizontal : BTN_DEFAULT_PADDING;
-        const fontSize = this.props.fontSize? this.props.fontSize : FONTSIZE_DEFAULT
-        const textAlign = this.props.textAlign? this.props.textAlign : TEXTALIGN_DEFAULT
         const marginTop = this.props.marginTop? this.props.marginTop : MARGIN_DEFAULT
+
         return(
             <TouchableOpacity
      
@@ -37,14 +30,17 @@ export default class CustomizeButton extends Component<IMidSizeButtonScreenProps
                     marginHorizontal: marginHorizontal,
                     paddingHorizontal: paddingHorizontal,
                     paddingVertical: paddingVertical,
-                    backgroundColor: backgroundColor,
+                    backgroundColor: DARK_GREEN,
                     marginTop : marginTop,
+                    //flex: 1,
+                    //justifyContent: "flex-end",
+                    //marginBottom: 40,
                 }}>
                     <Text style={{
-                        fontSize: fontSize,
-                        textAlign: textAlign,
+                        fontSize: 20,
+                        textAlign: "center",
                     }}>
-                        {message}
+                        Continue
                     </Text>
                 </View>
             </TouchableOpacity>
