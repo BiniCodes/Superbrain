@@ -1,10 +1,8 @@
 import {View, Text, Button, StyleSheet, Image,} from "react-native";
 import React from "react";
-import Headline from "../components/Headline";
 import {NavigationScreenProp, NavigationState, NavigationParams, ScrollView, } from "react-navigation";
 import ContinueButtonBottom from "../components/ContinueButtonBottom";
-import WordsInput from "../components/WordsInput";
-import { LIGHT_GREEN } from "../constans";
+import Leaderboard from "../components/Leaderboard";
 
 interface IInterGradesPageProps  {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -23,21 +21,24 @@ export default  class  InterGrades extends React.Component<IInterGradesPageProps
         flexDirection: "column",
         justifyContent: "center",
         }}>
-        
-        <View style={{flex:1}}>
-          <Headline
-            message = "Hello World!"
-            fontSize = {25}
-            textAlign = "center"
-            marginTop = {100}
-            marginBottom = {50}
-          />
-        
-
+        <View style={{height: 40}}>
+          <Text style={{textAlign: "center", fontSize: 25}}>Enter your grades from 1 - 6 </Text>
         </View>
 
+
+        
+        <ScrollView style={{flex:1}}>
+          <Leaderboard
+          SubjectsList = {["Biologie", "Chemie", "Deutsch", "Englisch", "Geographie",
+                          "Ethik", "Französisch", "Geschichte", "Informatik", "Kunst",
+                          "Latein", "Mathematik", "Musik", "Pädagogik", "Philosophie",
+                          "Religion", "Sport"]}
+          />
+          
+        </ScrollView>
+
         <ContinueButtonBottom
-          handleOnPress={() => navigate("Home")}
+          handleOnPress={() => navigate("AdditionalQuestions")}
         />
 
       </View>

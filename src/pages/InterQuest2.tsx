@@ -5,6 +5,7 @@ import {NavigationScreenProp, NavigationState, NavigationParams, ScrollView, } f
 import ContinueButtonBottom from "../components/ContinueButtonBottom";
 import WordsInput from "../components/WordsInput";
 import { LIGHT_GREEN } from "../constans";
+import DropDown from "../components/DropDown";
 
 interface IInterQuest2PageProps  {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -32,17 +33,11 @@ export default  class  InterQuest2 extends React.Component<IInterQuest2PageProps
             marginTop = {100}
             marginBottom = {50}
           />
-        
-        <WordsInput
-          marginBottom = {90}
-          marginHorizontal = {40}
-          fontSize = {22}
-          height = {40}
-          borderColor = {LIGHT_GREEN}
-          borderWidth = {1}
-          placeholder = "Bundesland"
-        />
 
+          <DropDown
+            PossibleChoices = {["Baden-Württemberg", "Bayern", "Berlin", "Nordrhein-Westfalen", "Hessen", "Sachsen", "Rheinland-Pfalz", "Schleswig-Holstein", "Thüringen", "Niedersachsen", "Hamburg", "Sachsen-Anhalt", "Saarland", "Brandenburg", "Bremen", "Mecklenburg-Vorpommern"]}
+            width = {300}
+          />
 
         </View>
 

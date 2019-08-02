@@ -15,7 +15,7 @@ interface IProfilePageProps  {
 
 export default  class  JoinLeaderboard extends React.Component<IProfilePageProps> {
     static navigationOptions = {
-      title: 'Join ID',
+      title: 'Join private leaderboard',
     };
     render() {
         const {navigate} = this.props.navigation;

@@ -4,11 +4,10 @@ import { MAXLENGTH_NUMBER_DEFAULT, DARK_BLUE, MARGIN_DEFAULT, FONTSIZE_DEFAULT, 
 import {View} from "react-native";
 
 
-interface INumberInputScreenProps {
+interface IGradesInputScreenProps {
     maxLength?: number,
     marginBottom?: number,
     marginHorizontal?: number,
-    fontSize?: number,
     height?: number,
     borderColor?: string,
     borderWidth?: 1,
@@ -17,7 +16,7 @@ interface INumberInputScreenProps {
 
 
 
-export default class NumberInput extends Component<INumberInputScreenProps> {
+export default class GradesInput extends Component<IGradesInputScreenProps> {
     state= {
         myNumber: 0
     }
@@ -39,29 +38,33 @@ export default class NumberInput extends Component<INumberInputScreenProps> {
         const maxLength = this.props.maxLength? this.props.maxLength : MAXLENGTH_NUMBER_DEFAULT;
         const marginBottom = this.props.marginBottom? this.props.marginBottom : MARGIN_DEFAULT;
         const marginHorizontal = this.props.marginHorizontal? this.props.marginHorizontal : MARGIN_DEFAULT;
-        const fontSize = this.props.fontSize? this.props.fontSize : FONTSIZE_DEFAULT;
         const height = this.props.height? this.props.height : HEIGHT_DEFAULT;
         const borderColor = this.props.borderColor? this.props.borderColor : "";
         const borderWidth = this.props.borderWidth? this.props.borderWidth : BORDERWIDTH_DEFAULT;
         const textAlign = this.props.textAlign? this.props.textAlign : TEXTALIGN_DEFAULT;
 
         return(
-            <View>
+            <View style={{
+                alignSelf: "flex-end",
+                marginRight: 20,
+                marginVertical: 5,
+                }}>
                 <TextInput
                     keyboardType="numeric"
                     onChangeText={ (text) => this.onChanged(text)}
                     value = {this.state.myNumber}
                     maxLength = {maxLength}
-                    placeholder = "your code"
+                    placeholder = "Note"
                     style = {{
                         marginBottom: marginBottom,
                         marginHorizontal: marginHorizontal,
-                        fontSize: fontSize,
+                        fontSize: 25,
                         //height = "padding"
                         height: height,
                         borderColor: borderColor,
                         borderWidth: borderWidth,
                         textAlign: textAlign,
+                        
                     }}
                 />
             </View>
