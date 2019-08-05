@@ -23,7 +23,7 @@ export default class ContinueButtonBottom extends Component<IContinueButtonBotto
                             paddingHorizontal: paddingHorizontal,
                             paddingVertical: 10,
                             backgroundColor: DARK_GREEN,
-                            marginTop: 30
+                            marginTop: 20
                             //flex: 1,
                             //justifyContent: "flex-end",
                             //marginBottom: 40,

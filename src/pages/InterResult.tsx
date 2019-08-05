@@ -4,6 +4,8 @@ import Headline from '../components/Headline';
 import { NavigationScreenProp, NavigationState, NavigationParams, ScrollView } from 'react-navigation';
 import ContinueButtonBottom from '../components/ContinueButtonBottom';
 import Leaderboard from '../components/Leaderboard';
+import InterRanking from '../components/InterRanking';
+import { DARK_BLUE } from '../constans';
 
 interface IInterResultPageProps {
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -23,15 +25,16 @@ export default class InterResult extends React.Component<IInterResultPageProps> 
                     justifyContent: 'center'
                 }}
             >
-                <View style={{ height: 80 }}>
+                <View style={{ height: 70 }}>
                     <Text style={{ textAlign: 'center', fontSize: 20, marginTop: 10 }}>
                         Your current position out of
                     </Text>
                     <Text style={{ textAlign: 'center', fontSize: 20, fontWeight: 'bold' }}>1.237.982 competitors</Text>
                 </View>
                 <ScrollView style={{ flex: 1 }}>
-                    <Leaderboard
+                    <InterRanking
                         SubjectsList={[
+                            'Zeugnis',
                             'Biologie',
                             'Chemie',
                             'Deutsch',
