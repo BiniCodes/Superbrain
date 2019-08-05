@@ -152,19 +152,16 @@ export default class CreateLeaderboard extends React.Component<ICreateLeaderboar
     };
 
     handleSave = () => {
-        const tmpBoard = {
-            id: null,
-            name: 'default',
-            subjects: this.state.items
-        } as LeaderboardEntry;
-        let res = saveToServer(tmpBoard);
-        res.then(result => {
-            this.delay(8000);
-            this.props.navigation.navigate('CreateLeaderboardFeature');
-        });
-    };
+        // const tmpBoard = {
+        //     id: null,
+        //     name: 'default',
+        //     subjects: this.state.items
+        // } as LeaderboardEntry;
+        // let res = saveToServer(tmpBoard);
+        // res.then(result => {
+        //     this.delay(8000);
 
-    delay(ms: number) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
+        // });
+        this.props.navigation.navigate('CreateLeaderboardFeature');
+    };
 }

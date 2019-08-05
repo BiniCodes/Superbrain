@@ -1,6 +1,9 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
+import Headline from '../components/Headline';
+import { DARK_GREEN, DARK_BLUE, LIGHT_GREEN, LIGHT_YELLOW } from '../constans';
+import CustomizeButton from '../components/CustomizeButton';
 import { LeaderboardEntry } from '../models/Leaderboard';
 import { http } from '../services/Server';
 
@@ -9,7 +12,7 @@ interface ICreateLeaderboardFeatureScreenProps {
 }
 
 interface IState {
-    leaderboard: LeaderboardEntry | null;
+    leaderboard: LeaderboardEntry;
 }
 export default class CreateLeaderboardFeature extends React.Component<ICreateLeaderboardFeatureScreenProps, IState> {
     static navigationOptions = {
@@ -23,13 +26,13 @@ export default class CreateLeaderboardFeature extends React.Component<ICreateLea
         };
     }
 
-    componentWillMount() {
-        http('10').then(item => console.log(item));
+    componentDidMount() {
+        http('10').then(item => this.setState({ leaderboard: item }));
     }
 
     render() {
         const { navigate } = this.props.navigation;
-        if (true) return <View></View>;
+        if (!this.state.leaderboard) return <View></View>;
         return (
             <View>
                 <Text>{this.state.leaderboard && this.state.leaderboard.name}</Text>
