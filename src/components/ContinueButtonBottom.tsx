@@ -35,7 +35,7 @@ export default class ContinueButtonBottom extends Component<IContinueButtonBotto
                             fontSize: 20,
                             textAlign: "center",
                         }}>
-                            Continue
+                            Save
                         </Text>
                     </View>
 

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
-import { MAXLENGTH_NUMBER_DEFAULT, DARK_BLUE, MARGIN_DEFAULT, FONTSIZE_DEFAULT, HEIGHT_DEFAULT, BORDERWIDTH_DEFAULT, TEXTALIGN_DEFAULT, View_Align_Default, DARK_GREEN } from "../constans";
 import {View} from "react-native";
-import { Item } from "../models/Leaderboard";
 
 
 interface IToggleBtnProps {
@@ -24,7 +22,7 @@ export default class ToggleBtn extends Component<IToggleBtnProps> {
                     marginVertical: 20,
                     marginHorizontal: 30,
                     paddingVertical: 20,
-                    backgroundColor: this.props.status && this.props.status ? DARK_GREEN : DARK_BLUE,
+                    backgroundColor: this.props.status && this.props.status ? "#1df239" : "#f22f1d",
                     
                 }}>     
                 </View>

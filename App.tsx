@@ -13,6 +13,7 @@ import InterQuest5 from './src/pages/InterQuest5';
 import InterGrades from './src/pages/InterGrades';
 import AdditionalQuestions from './src/pages/AdditionalQuestions';
 import InterResult from './src/pages/InterResult';
+import CreateLeaderboardFeature from './src/pages/CreateLeaderboardFeature';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -27,6 +28,7 @@ const MainNavigator = createStackNavigator({
   InterGrades: {screen: InterGrades},
   AdditionalQuestions: {screen: AdditionalQuestions},
   InterResult: {screen: InterResult},
+  CreateLeaderboardFeature: {screen: CreateLeaderboardFeature},
 });
 
 const App = createAppContainer(MainNavigator);
