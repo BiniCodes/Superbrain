@@ -1,14 +1,11 @@
-import { View, ScrollView, Text, TouchableNativeFeedback } from 'react-native';
 import React from 'react';
-import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
-import Subject from '../components/Subject';
-import ContinueButtonBottom from '../components/ContinueButtonBottom';
-import GradesInput from '../components/GradesInput';
-import Leaderboard from '../components/Leaderboard';
-import { Item, LeaderboardEntry } from '../models/Leaderboard';
-import ToggleBtn from '../components/ToggleBtn';
-import { saveToServer } from '../services/Server';
-import { ForceTouchGestureHandler } from 'react-native-gesture-handler';
+import { ScrollView, Text, View } from 'react-native';
+import { NavigationParams, NavigationScreenProp, NavigationState } from 'react-navigation';
+import ContinueButtonBottom from '../../components/ContinueButtonBottom';
+import Subject from '../../components/Subject';
+import ToggleBtn from '../../components/ToggleBtn';
+import { Item, LeaderboardEntry } from '../../models/Leaderboard';
+import { saveToServer } from '../../services/Server';
 
 interface ICreateLeaderboardProps {
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -17,14 +14,14 @@ interface ICreateLeaderboardProps {
 interface ICreateLeaderboardState {
     items: Item[];
     leaderboard: LeaderboardEntry;
+    saveSuccess: boolean;
 }
 
 const makeid = length => {
-    var result = '';
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
     }
     return result;
 };
@@ -86,20 +83,27 @@ const getItems = (): Item[] => {
 };
 
 export default class CreateLeaderboard extends React.Component<ICreateLeaderboardProps, ICreateLeaderboardState> {
+    public static navigationOptions = {
+        title: 'Creating leaderboard'
+    };
     private id;
     constructor(props: ICreateLeaderboardProps) {
         super(props);
         this.id = makeid(10);
         this.state = {
             items: getItems(),
-            leaderboard: null
+            leaderboard: null,
+            saveSuccess: false
         };
     }
 
-    static navigationOptions = {
-        title: 'Creating leaderboard'
-    };
-    render() {
+    public componentDidUpdate(prev: ICreateLeaderboardProps, prevState: ICreateLeaderboardState) {
+        if (this.state.saveSuccess !== prevState.saveSuccess) {
+            this.props.navigation.navigate('Home');
+        }
+    }
+
+    public render() {
         if (this.state.items.length < 0) {
             return (
                 <View style={{ height: 40 }}>
@@ -107,7 +111,6 @@ export default class CreateLeaderboard extends React.Component<ICreateLeaderboar
                 </View>
             );
         }
-        const { navigate } = this.props.navigation;
 
         return (
             <View
@@ -139,29 +142,26 @@ export default class CreateLeaderboard extends React.Component<ICreateLeaderboar
                         );
                     })}
                 </ScrollView>
-                <ContinueButtonBottom handleOnPress={() => this.handleSave()} />
+                <ContinueButtonBottom handleOnPress={this.handleSave} />
             </View>
         );
     }
 
     // spread operator map und sharthand szntax
-    handleToggle = (item: Item) => {
+    private handleToggle = (item: Item) => {
         this.setState({
-            items: this.state.items.map(x => (x.name == item.name ? { ...item, status: !item.status } : x))
+            items: this.state.items.map(x => (x.name === item.name ? { ...item, status: !item.status } : x))
         });
     };
 
-    handleSave = () => {
-        // const tmpBoard = {
-        //     id: null,
-        //     name: 'default',
-        //     subjects: this.state.items
-        // } as LeaderboardEntry;
-        // let res = saveToServer(tmpBoard);
-        // res.then(result => {
-        //     this.delay(8000);
-
-        // });
-        this.props.navigation.navigate('CreateLeaderboardFeature');
+    private handleSave = () => {
+        const entry: LeaderboardEntry = {
+            id: null,
+            name: this.id,
+            subjects: this.state.items
+        };
+        saveToServer(entry).then(_ => {
+            this.setState({ saveSuccess: true });
+        });
     };
 }

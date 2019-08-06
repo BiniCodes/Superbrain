@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import HomeScreen from './src/pages/Homescreen';
-import JoinLeaderboard from './src/pages/JoinLeaderboard';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import AddingGrades from './src/pages/AddingGrades';
-import CreateLeaderboard from './src/pages/CreateLeaderboard';
-import JoinInternational from './src/pages/JoinInternational';
+import AdditionalQuestions from './src/pages/AdditionalQuestions';
+import HomeScreen from './src/pages/Homescreen';
+import InterGrades from './src/pages/InterGrades';
 import InterQuest2 from './src/pages/InterQuest2';
 import InterQuest3 from './src/pages/InterQuest3';
 import InterQuest4 from './src/pages/InterQuest4';
 import InterQuest5 from './src/pages/InterQuest5';
-import InterGrades from './src/pages/InterGrades';
-import AdditionalQuestions from './src/pages/AdditionalQuestions';
 import InterResult from './src/pages/InterResult';
-import CreateLeaderboardFeature from './src/pages/CreateLeaderboardFeature';
+import JoinInternational from './src/pages/JoinInternational';
+import JoinLeaderboard from './src/pages/JoinLeaderboard';
+import CreateLeaderboard from './src/pages/LeaderBoard/CreateLeaderboard';
+import CreateLeaderboardFeature from './src/pages/LeaderBoard/ShowLeaderboard';
 import NeedHelp from './src/pages/NeedHelp';
 
 const MainNavigator = createStackNavigator({

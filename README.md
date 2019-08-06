@@ -4,7 +4,7 @@
 
 ## start mock server with
 
-`json-server --watch --port 4000 backend/db.json`
+`json-server --watch --port 4000 --host <your ip adress> backend/db.json`
 
 more infos :
 https://github.com/typicode/json-server
