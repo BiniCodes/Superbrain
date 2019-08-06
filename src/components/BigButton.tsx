@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, Text, TouchableOpacity, GestureResponderEvent } from 'react-native';
-import { NavigationScreenProp, NavigationState, NavigationParams, withNavigation } from 'react-navigation';
+import { Text, TouchableOpacity, View } from 'react-native';
 
 interface IButtonScreenProps {
     message: string;
@@ -9,7 +8,7 @@ interface IButtonScreenProps {
 }
 
 export default class BigButton extends Component<IButtonScreenProps> {
-    render() {
+    public render() {
         const message = this.props.message;
         const backgroundColor = this.props.backgroundColor;
         return (

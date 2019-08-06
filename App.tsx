@@ -11,12 +11,16 @@ import InterResult from './src/pages/InterResult';
 import JoinInternational from './src/pages/JoinInternational';
 import JoinLeaderboard from './src/pages/JoinLeaderboard';
 import CreateLeaderboard from './src/pages/LeaderBoard/CreateLeaderboard';
+import ListLeaderBoards from './src/pages/LeaderBoard/ListLeaderBoards';
 import CreateLeaderboardFeature from './src/pages/LeaderBoard/ShowLeaderboard';
 import NeedHelp from './src/pages/NeedHelp';
+import ShowLeaderboard from './src/pages/LeaderBoard/ShowLeaderboard';
 
 const MainNavigator = createStackNavigator({
     Home: { screen: HomeScreen },
     JoinLeaderboard: { screen: JoinLeaderboard },
+    ListLeaderBoards: { screen: ListLeaderBoards },
+    ShowLeaderboard: { screen: ShowLeaderboard },
     AddingGrade: { screen: AddingGrades },
     CreateLeaderboard: { screen: CreateLeaderboard },
     JoinInternational: { screen: JoinInternational },

@@ -99,7 +99,7 @@ export default class CreateLeaderboard extends React.Component<ICreateLeaderboar
 
     public componentDidUpdate(prev: ICreateLeaderboardProps, prevState: ICreateLeaderboardState) {
         if (this.state.saveSuccess !== prevState.saveSuccess) {
-            this.props.navigation.navigate('Home');
+            this.props.navigation.navigate('ListLeaderBoards');
         }
     }
 

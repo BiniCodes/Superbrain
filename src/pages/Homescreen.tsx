@@ -1,10 +1,10 @@
-import { View } from 'react-native';
 import React from 'react';
-import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
-import Headline from '../components/Headline';
+import { View } from 'react-native';
+import { NavigationParams, NavigationScreenProp, NavigationState } from 'react-navigation';
 import BigButton from '../components/BigButton';
-import { DARK_GREEN, DARK_BLUE, LIGHT_GREEN, LIGHT_YELLOW } from '../constans';
 import CustomizeButton from '../components/CustomizeButton';
+import Headline from '../components/Headline';
+import { DARK_BLUE, DARK_GREEN, LIGHT_GREEN, LIGHT_YELLOW } from '../constans';
 
 interface IHomeScreenProps {
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -14,7 +14,7 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
     static navigationOptions = {
         title: 'Welcome to Superbrain'
     };
-    render() {
+    public render() {
         const { navigate } = this.props.navigation;
         return (
             <View>
@@ -42,9 +42,9 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
                 />
 
                 <BigButton
-                    message="create private leaderboard"
+                    message="List Leader Boards"
                     backgroundColor={DARK_BLUE}
-                    handleOnPress={() => navigate('CreateLeaderboard')}
+                    handleOnPress={() => navigate('ListLeaderBoards')}
                 />
 
                 <CustomizeButton
