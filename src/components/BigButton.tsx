@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { DARK_BLUE } from '../constans';
 
 interface IButtonScreenProps {
     message: string;
@@ -15,15 +16,19 @@ export default class BigButton extends Component<IButtonScreenProps> {
             <TouchableOpacity onPress={this.props.handleOnPress} activeOpacity={2}>
                 <View
                     style={{
-                        marginVertical: 20,
-                        marginHorizontal: 30,
-                        paddingVertical: 20,
-                        backgroundColor: backgroundColor
+                        marginVertical: 8,
+                        marginHorizontal: 16,
+                        paddingVertical: 16,
+                        backgroundColor: DARK_BLUE,
+                        borderRadius: 4
+                        //borderColor: DARK_BLUE,
+                        //borderWidth: 1
                     }}
                 >
                     <Text
                         style={{
-                            fontSize: 25,
+                            fontSize: 16,
+                            color: '#ffffff',
                             textAlign: 'center'
                         }}
                     >

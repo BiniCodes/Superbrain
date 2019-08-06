@@ -1,17 +1,17 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { NavigationParams, NavigationScreenProp, NavigationState } from 'react-navigation';
 import BigButton from '../components/BigButton';
 import CustomizeButton from '../components/CustomizeButton';
 import Headline from '../components/Headline';
-import { DARK_BLUE, DARK_GREEN, LIGHT_GREEN, LIGHT_YELLOW } from '../constans';
+import { DARK_BLUE, DARK_GREEN, LIGHT_GREEN } from '../constans';
 
 interface IHomeScreenProps {
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
 }
 
 export default class HomeScreen extends React.Component<IHomeScreenProps> {
-    static navigationOptions = {
+    public static navigationOptions = {
         title: 'Welcome to Superbrain'
     };
     public render() {
@@ -19,12 +19,13 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
         return (
             <View>
                 <Headline message="Superbrain" textAlign="center" marginTop={20} marginBottom={10} />
-
+                <Image style={{ width: 500, height: 50 }} source={require('../icons/brain-logo.png')} />
                 <Headline
                     message="This app is for all people who want
                       to compare their grades anonymously"
                     textAlign="center"
                     marginHorizontal={40}
+                    marginBottom={80}
                     fontSize={15}
                 />
 
@@ -36,23 +37,23 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
 
                 <BigButton
                     message="join private leaderboard"
-                    //vertical = senkrecht!!
+                    // vertical = senkrecht!!
                     backgroundColor={DARK_GREEN}
                     handleOnPress={() => navigate('JoinLeaderboard')}
                 />
 
                 <BigButton
-                    message="List Leader Boards"
+                    message="List of all your leaderboards"
                     backgroundColor={DARK_BLUE}
                     handleOnPress={() => navigate('ListLeaderBoards')}
                 />
 
                 <CustomizeButton
                     message="instruction"
-                    backgroundColor={LIGHT_YELLOW}
+                    borderRadius={4}
                     marginTop={30}
                     fontSize={15}
-                    marginHorizontal={110}
+                    marginHorizontal={16}
                     paddingVertical={10}
                     textAlign="center"
                     handleOnPress={() => navigate('NeedHelp')}
@@ -60,15 +61,4 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
             </View>
         );
     }
-}
-
-{
-    /*}
-  <TouchableOpacity onPress={() => navigate('JoinID')} activeOpacity={2}>
-    <View style={bigButton.darkblue}>
-    <Text style={styles.headline}>join ID</Text>
-
-    </View>
-  </TouchableOpacity> 
-*/
 }

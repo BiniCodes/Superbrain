@@ -2,9 +2,12 @@ import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { NavigationParams, NavigationScreenProp, NavigationState, ScrollView } from 'react-navigation';
 import BigButton from '../../components/BigButton';
+import CustomizeButton from '../../components/CustomizeButton';
 import { DARK_BLUE, DARK_GREEN } from '../../constans';
 import { LeaderboardEntry } from '../../models/Leaderboard';
 import { getAll } from '../../services/Server';
+import Swipeout from 'react-native-swipeout';
+import Headline from '../../components/Headline';
 
 interface IShowLeaderboardProps {
     id: string;
@@ -37,43 +40,81 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
         const boards = this.state.leaderboards;
         if (!boards) {
             return (
-                <View>
-                    <Text>Loading</Text>
+                <View
+                    style={{
+                        flex: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: DARK_GREEN
+                    }}
+                >
+                    <Text style={{ fontSize: 30 }}>Loading...</Text>
                 </View>
             );
         }
         return (
-            <View>
-                <ScrollView>
+            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                <ScrollView style={{ flex: 1 }}>
                     {boards.map(board => (
-                        <TouchableOpacity
-                            key={board.id}
-                            onPress={() => navigate('ShowLeaderboard', { id: board.id })}
-                            activeOpacity={2}
-                        >
-                            <View
-                                style={{
-                                    backgroundColor: DARK_GREEN,
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                    margin: 10,
-                                    padding: 10,
-                                    justifyContent: 'space-between'
-                                }}
+                        // swipeout make the background to gray
+                        <Swipeout>
+                            <TouchableOpacity
+                                key={board.id}
+                                onPress={() => navigate('ShowLeaderboard', { id: board.id })}
+                                activeOpacity={2}
                             >
-                                <Text>{board.name}</Text>
-                                <Text>DELETE</Text>
-                                <Text>EDIT</Text>
-                            </View>
-                        </TouchableOpacity>
+                                <View
+                                    style={{
+                                        backgroundColor: DARK_GREEN,
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        margin: 10,
+                                        padding: 15,
+                                        justifyContent: 'space-between'
+                                    }}
+                                >
+                                    <Text>{board.name}</Text>
+                                    <CustomizeButton message="delete" />
+                                    <CustomizeButton message="edit" />
+                                </View>
+                            </TouchableOpacity>
+                        </Swipeout>
                     ))}
                 </ScrollView>
+
                 <BigButton
-                    message="List Leader Boards"
+                    message="Create a new leaderboard"
                     backgroundColor={DARK_BLUE}
-                    handleOnPress={() => navigate('ListLeaderBoards')}
+                    handleOnPress={() => navigate('CreateLeaderboard')}
                 />
             </View>
         );
     }
+}
+
+{
+    /* <ScrollView>
+    {boards.map(board => (
+        <TouchableOpacity
+            key={board.id}
+            onPress={() => navigate('ShowLeaderboard', { id: board.id })}
+            activeOpacity={2}
+        >
+            <View
+                style={{
+                    backgroundColor: DARK_GREEN,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    margin: 10,
+                    padding: 15,
+                    justifyContent: 'space-between'
+                }}
+            >
+                <Text>{board.name}</Text>
+                <CustomizeButton message="Delete" />
+                <CustomizeButton message="Edit" />
+            </View>
+        </TouchableOpacity>
+    ))}
+</ScrollView>; */
 }

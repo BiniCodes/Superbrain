@@ -12,9 +12,11 @@ import JoinInternational from './src/pages/JoinInternational';
 import JoinLeaderboard from './src/pages/JoinLeaderboard';
 import CreateLeaderboard from './src/pages/LeaderBoard/CreateLeaderboard';
 import ListLeaderBoards from './src/pages/LeaderBoard/ListLeaderBoards';
-import CreateLeaderboardFeature from './src/pages/LeaderBoard/ShowLeaderboard';
+import {
+    default as CreateLeaderboardFeature,
+    default as ShowLeaderboard
+} from './src/pages/LeaderBoard/ShowLeaderboard';
 import NeedHelp from './src/pages/NeedHelp';
-import ShowLeaderboard from './src/pages/LeaderBoard/ShowLeaderboard';
 
 const MainNavigator = createStackNavigator({
     Home: { screen: HomeScreen },
