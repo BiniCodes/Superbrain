@@ -21,8 +21,8 @@ export default class BigButton extends Component<IButtonScreenProps> {
                         paddingVertical: 16,
                         backgroundColor: DARK_BLUE,
                         borderRadius: 4
-                        //borderColor: DARK_BLUE,
-                        //borderWidth: 1
+                        // borderColor: DARK_BLUE,
+                        // borderWidth: 1
                     }}
                 >
                     <Text

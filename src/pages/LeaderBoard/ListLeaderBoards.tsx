@@ -45,10 +45,10 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
                         flex: 1,
                         alignItems: 'center',
                         justifyContent: 'center',
-                        backgroundColor: DARK_GREEN
+                        backgroundColor: DARK_BLUE
                     }}
                 >
-                    <Text style={{ fontSize: 30 }}>Loading...</Text>
+                    <Text style={{ fontSize: 30, color: '#ffffff' }}>Loading...</Text>
                 </View>
             );
         }

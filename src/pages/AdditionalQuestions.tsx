@@ -38,38 +38,38 @@ export default class AdditionalQuestions extends React.Component<IAdditionalQues
                         height={40}
                         borderColor={LIGHT_GREEN}
                         borderWidth={1}
-                        placeholder="enter a nickname*"
+                        placeholder="enter a fake name*"
                     />
 
                     <Headline
                         message="How much time do you spend for learning in a week?"
                         fontSize={20}
-                        textAlign="center"
+                        textAlign="left"
                         marginVertical={15}
                         marginHorizontal={40}
                     />
 
-                    <DropDown PossibleChoices={['5h<', '5h-10h', '>10h']} />
+                    <DropDown PossibleChoices={['5h<', '5h-10h', '>10h']} width={350} />
 
                     <Headline
                         message="Are you a male or female?"
                         fontSize={20}
-                        textAlign="center"
+                        textAlign="left"
                         marginVertical={15}
                         marginHorizontal={40}
                     />
 
-                    <DropDown PossibleChoices={['male', 'female']} />
+                    <DropDown PossibleChoices={['male', 'female']} width={350} />
 
                     <Headline
                         message="Are other users allowed to see your profile?*"
                         fontSize={20}
-                        textAlign="center"
+                        textAlign="left"
                         marginVertical={15}
                         marginHorizontal={40}
                     />
 
-                    <DropDown PossibleChoices={['Yes', 'No']} />
+                    <DropDown PossibleChoices={['Yes', 'No']} width={350} />
                 </View>
 
                 <ContinueButtonBottom handleOnPress={() => navigate('InterResult')} />
@@ -80,9 +80,8 @@ export default class AdditionalQuestions extends React.Component<IAdditionalQues
 
 const styles = StyleSheet.create({
     Question: {
-        fontSize: 18,
+        fontSize: 20,
         marginLeft: 40,
-        marginBottom: 10,
-        fontWeight: 'bold'
+        marginBottom: 10
     }
 });

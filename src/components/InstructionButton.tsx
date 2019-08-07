@@ -19,12 +19,14 @@ export default class InstructionButton extends Component<IInstructionButtonScree
                         marginVertical: 15,
                         marginHorizontal: 80,
                         paddingVertical: 10,
-                        backgroundColor: backgroundColor
+                        backgroundColor: backgroundColor,
+                        borderRadius: 4
                     }}
                 >
                     <Text
                         style={{
                             fontSize: 18,
+                            color: '#ffffff',
                             textAlign: 'center'
                         }}
                     >

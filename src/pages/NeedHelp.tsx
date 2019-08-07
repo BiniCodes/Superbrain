@@ -37,7 +37,7 @@ export default class NeedHelp extends React.Component<INeedHelpPageProps> {
                 <View style={{ flex: 1 }}>
                     <InstructionButton
                         message="International leaderboard"
-                        backgroundColor={LIGHT_GREEN}
+                        backgroundColor={DARK_BLUE}
                         handleOnPress={() => navigate('JoinInternational')}
                     />
                     <Text style={styles.DescriptionText}>
@@ -48,7 +48,7 @@ export default class NeedHelp extends React.Component<INeedHelpPageProps> {
                     <InstructionButton
                         message="join private leaderboard"
                         //vertical = senkrecht!!
-                        backgroundColor={DARK_GREEN}
+                        backgroundColor={DARK_BLUE}
                         handleOnPress={() => navigate('JoinLeaderboard')}
                     />
                     <Text style={styles.DescriptionText}>
@@ -57,13 +57,13 @@ export default class NeedHelp extends React.Component<INeedHelpPageProps> {
                     </Text>
 
                     <InstructionButton
-                        message="create private leaderboard"
+                        message="List of all your leaderboards"
                         backgroundColor={DARK_BLUE}
-                        handleOnPress={() => navigate('CreateLeaderboard')}
+                        handleOnPress={() => navigate('ListLeaderboards')}
                     />
                     <Text style={styles.DescriptionText}>
-                        This is to create a private list. You will get a code that you can share to your friend. Only
-                        those with the code can join your leaderboard
+                        This is where you can create your own leaderboard and also see in which leaderboard you are
+                        registered
                     </Text>
                 </View>
             </View>

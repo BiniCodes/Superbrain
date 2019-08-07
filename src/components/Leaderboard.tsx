@@ -3,6 +3,7 @@ import { View, Picker } from 'react-native';
 import { LIGHT_GREEN } from '../constans';
 import Subject from './Subject';
 import GradesInput from './GradesInput';
+import DropDown from './DropDown';
 
 interface ILeaderboardProps {
     SubjectsList: string[];
@@ -17,12 +18,25 @@ export default class Leaderboard extends Component<ILeaderboardProps> {
                 <View key={item} style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Subject message={item} />
 
-                    <GradesInput
-                        maxLength={1}
-                        height={50}
-                        borderColor={LIGHT_GREEN}
-                        borderWidth={1}
-                        textAlign="center"
+                    <DropDown
+                        width={100}
+                        PossibleChoices={[
+                            '1',
+                            '2',
+                            '3',
+                            '4',
+                            '5',
+                            '6',
+                            '7',
+                            '8',
+                            '9',
+                            '10',
+                            '11',
+                            '12',
+                            '13',
+                            '14',
+                            '15'
+                        ]}
                     />
                 </View>
             );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Button, Text, TouchableOpacity, GestureResponderEvent } from 'react-native';
-import { BTN_DEFAULT_PADDING, MARGIN_DEFAULT, DARK_GREEN } from '../constans';
+import { BTN_DEFAULT_PADDING, MARGIN_DEFAULT, DARK_GREEN, DARK_BLUE } from '../constans';
 
 interface IContinueButtonBottomScreenProps {
     marginVertical?: number;
@@ -22,8 +22,9 @@ export default class ContinueButtonBottom extends Component<IContinueButtonBotto
                             marginHorizontal: 70,
                             paddingHorizontal: paddingHorizontal,
                             paddingVertical: 10,
-                            backgroundColor: DARK_GREEN,
-                            marginTop: 20
+                            backgroundColor: DARK_BLUE,
+                            marginTop: 20,
+                            borderRadius: 4
                             //flex: 1,
                             //justifyContent: "flex-end",
                             //marginBottom: 40,
@@ -32,7 +33,8 @@ export default class ContinueButtonBottom extends Component<IContinueButtonBotto
                         <Text
                             style={{
                                 fontSize: 20,
-                                textAlign: 'center'
+                                textAlign: 'center',
+                                color: '#ffffff'
                             }}
                         >
                             Continue

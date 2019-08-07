@@ -4,7 +4,7 @@ import { NavigationParams, NavigationScreenProp, NavigationState } from 'react-n
 import ContinueButtonBottom from '../components/ContinueButtonBottom';
 import Headline from '../components/Headline';
 import WordsInput from '../components/WordsInput';
-import { LIGHT_GREEN } from '../constans';
+import { LIGHT_GREEN, DARK_BLUE } from '../constans';
 
 interface IInterQuest3PageProps {
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -38,7 +38,7 @@ export default class InterQuest3 extends React.Component<IInterQuest3PageProps> 
                         marginHorizontal={40}
                         fontSize={22}
                         height={40}
-                        borderColor={LIGHT_GREEN}
+                        borderColor={DARK_BLUE}
                         borderWidth={1}
                         placeholder="Stadt"
                     />

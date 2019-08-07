@@ -6,7 +6,9 @@ import {
     FONTSIZE_DEFAULT,
     TEXTALIGN_DEFAULT,
     BACKGROUND_COLOR_DEFAULT,
-    DARK_BLUE
+    DARK_BLUE,
+    BORDERWIDTH_DEFAULT,
+    BORDERCOLOR_DEFAULT
 } from '../constans';
 
 interface IMidSizeButtonScreenProps {
@@ -21,6 +23,8 @@ interface IMidSizeButtonScreenProps {
     marginTop?: number;
     handleOnPress?: () => void;
     borderRadius?: number;
+    borderWidth?: number;
+    borderColor?: string;
 }
 
 export default class CustomizeButton extends Component<IMidSizeButtonScreenProps> {
@@ -35,6 +39,8 @@ export default class CustomizeButton extends Component<IMidSizeButtonScreenProps
         const borderRadius = this.props.borderRadius ? this.props.borderRadius : MARGIN_DEFAULT;
         const textAlign = this.props.textAlign ? this.props.textAlign : TEXTALIGN_DEFAULT;
         const marginTop = this.props.marginTop ? this.props.marginTop : MARGIN_DEFAULT;
+        const borderWidth = this.props.borderWidth ? this.props.borderWidth : BORDERWIDTH_DEFAULT;
+        const borderColor = this.props.borderColor ? this.props.borderColor : BORDERCOLOR_DEFAULT;
         return (
             <TouchableOpacity onPress={this.props.handleOnPress} activeOpacity={2}>
                 <View
@@ -46,8 +52,8 @@ export default class CustomizeButton extends Component<IMidSizeButtonScreenProps
                         backgroundColor: backgroundColor,
                         marginTop: marginTop,
                         borderRadius: borderRadius,
-                        borderWidth: 1,
-                        borderColor: DARK_BLUE
+                        borderWidth: borderWidth,
+                        borderColor: borderColor
                     }}
                 >
                     <Text
