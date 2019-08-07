@@ -19,7 +19,7 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
         return (
             <View>
                 <Headline message="Superbrain" textAlign="center" marginTop={20} marginBottom={10} />
-                <Image style={{ width: 500, height: 50 }} source={require('../icons/brain-logo.png')} />
+                {/* <Image style={{ width: 500, height: 50 }} source={require('../icons/brain-logo.png')} /> */}
                 <Headline
                     message="This app is for all people who want
                       to compare their grades anonymously"
