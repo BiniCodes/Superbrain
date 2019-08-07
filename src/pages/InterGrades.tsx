@@ -12,7 +12,7 @@ export default class InterGrades extends React.Component<IInterGradesPageProps> 
     static navigationOptions = {
         title: 'Joining leaderboard 5 out 6'
     };
-    render() {
+    public render() {
         const { navigate } = this.props.navigation;
         return (
             <View

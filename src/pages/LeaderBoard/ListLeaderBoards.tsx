@@ -6,8 +6,9 @@ import CustomizeButton from '../../components/CustomizeButton';
 import { DARK_BLUE, DARK_GREEN } from '../../constans';
 import { LeaderboardEntry } from '../../models/Leaderboard';
 import { getAll } from '../../services/Server';
-import Swipeout from 'react-native-swipeout';
+// import Swipeout from 'react-native-swipeout';
 import Headline from '../../components/Headline';
+// import { Directions } from 'react-native-gesture-handler';
 
 interface IShowLeaderboardProps {
     id: string;
@@ -52,33 +53,46 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
                 </View>
             );
         }
+        // const swipeSettings = {
+        //     autoClose: true,
+        //     onClose: (secId, rowId, direction) => {},
+        //     onOpen: (secId, rowId, direction) => {},
+        //     right: [
+        //         {
+        //             onPress: () => {},
+        //             text: 'Delete',
+        //             type: 'delete'
+        //         }
+        //     ],
+        //     rowId: this.board.id
+        // };
         return (
             <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
                 <ScrollView style={{ flex: 1 }}>
                     {boards.map(board => (
                         // swipeout make the background to gray
-                        <Swipeout>
-                            <TouchableOpacity
-                                key={board.id}
-                                onPress={() => navigate('ShowLeaderboard', { id: board.id })}
-                                activeOpacity={2}
+                        // <Swipeout {...swipeSettings}>
+                        <TouchableOpacity
+                            key={board.id}
+                            onPress={() => navigate('ShowLeaderboard', { id: board.id })}
+                            activeOpacity={2}
+                        >
+                            <View
+                                style={{
+                                    backgroundColor: DARK_GREEN,
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    margin: 10,
+                                    padding: 15,
+                                    justifyContent: 'space-between'
+                                }}
                             >
-                                <View
-                                    style={{
-                                        backgroundColor: DARK_GREEN,
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        margin: 10,
-                                        padding: 15,
-                                        justifyContent: 'space-between'
-                                    }}
-                                >
-                                    <Text>{board.name}</Text>
-                                    <CustomizeButton message="delete" />
-                                    <CustomizeButton message="edit" />
-                                </View>
-                            </TouchableOpacity>
-                        </Swipeout>
+                                <Text>{board.name}</Text>
+                                <CustomizeButton message="delete" />
+                                <CustomizeButton message="edit" />
+                            </View>
+                        </TouchableOpacity>
+                        // </Swipeout>
                     ))}
                 </ScrollView>
 
