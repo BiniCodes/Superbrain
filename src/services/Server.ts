@@ -12,6 +12,16 @@ export const getAll = () => {
     });
 };
 
+export const deleteById = async (id: string) => {
+    return new Promise(resolve => {
+        fetch(domain + '/' + id, { method: 'DELETE' })
+            .then(response => response.json())
+            .then(body => {
+                resolve(body);
+            });
+    });
+};
+
 export const saveToServer = (data: LeaderboardEntry) => {
     const requestHeaders: HeadersInit = new Headers();
     requestHeaders.set('Content-Type', 'application/json');

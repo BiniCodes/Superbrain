@@ -1,15 +1,13 @@
-import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import { NavigationParams, NavigationScreenProp, NavigationState, ScrollView } from 'react-navigation';
+import React, { Component } from 'react';
+import { Text, TouchableOpacity, View, StyleSheet, Alert } from 'react-native';
+import { NavigationParams, NavigationScreenProp, NavigationState, ScrollView, FlatList } from 'react-navigation';
 import BigButton from '../../components/BigButton';
 import CustomizeButton from '../../components/CustomizeButton';
 import { DARK_BLUE, DARK_GREEN } from '../../constans';
 import { LeaderboardEntry } from '../../models/Leaderboard';
-import { getAll } from '../../services/Server';
-// import Swipeout from 'react-native-swipeout';
-import Headline from '../../components/Headline';
-// import { Directions } from 'react-native-gesture-handler';
-
+import { getAll, deleteById } from '../../services/Server';
+import Swipeout from 'react-native-swipeout';
+import FlatListItem from '../../components/FlatListItem';
 interface IShowLeaderboardProps {
     id: string;
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -18,6 +16,7 @@ interface IShowLeaderboardProps {
 interface IState {
     leaderboards: LeaderboardEntry[];
 }
+
 export default class ListLeaderBoards extends React.Component<IShowLeaderboardProps, IState> {
     public static navigationOptions = {
         title: 'List Leaderboards'
@@ -34,6 +33,12 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
         getAll().then(boards => {
             this.setState({ leaderboards: boards as LeaderboardEntry[] });
         });
+    }
+
+    public componentDidUpdate(prevProps: IShowLeaderboardProps, prevState: IState) {
+        if (prevState.leaderboards !== this.state.leaderboards) {
+            this.setState({ leaderboards: this.state.leaderboards });
+        }
     }
 
     public render() {
@@ -53,49 +58,30 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
                 </View>
             );
         }
-        // const swipeSettings = {
-        //     autoClose: true,
-        //     onClose: (secId, rowId, direction) => {},
-        //     onOpen: (secId, rowId, direction) => {},
-        //     right: [
-        //         {
-        //             onPress: () => {},
-        //             text: 'Delete',
-        //             type: 'delete'
-        //         }
-        //     ],
-        //     rowId: this.board.id
-        // };
         return (
             <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-                <ScrollView style={{ flex: 1 }}>
-                    {boards.map(board => (
-                        // swipeout make the background to gray
-                        // <Swipeout {...swipeSettings}>
-                        <TouchableOpacity
-                            key={board.id}
-                            onPress={() => navigate('ShowLeaderboard', { id: board.id })}
-                            activeOpacity={2}
-                        >
-                            <View
-                                style={{
-                                    backgroundColor: DARK_GREEN,
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                    margin: 10,
-                                    padding: 15,
-                                    justifyContent: 'space-between'
-                                }}
-                            >
-                                <Text>{board.name}</Text>
-                                <CustomizeButton message="delete" />
-                                <CustomizeButton message="edit" />
-                            </View>
-                        </TouchableOpacity>
-                        // </Swipeout>
-                    ))}
-                </ScrollView>
-
+                <View style={{ flex: 1, marginTop: 22 }}>
+                    <FlatList
+                        data={boards}
+                        renderItem={({ item, index }) => {
+                            //console.log(`Item = ${JSON.stringify(item)}, index = ${index}`);
+                            return (
+                                <TouchableOpacity
+                                    key={item.id}
+                                    onPressOut={() => navigate('ShowLeaderboard', { id: item.id })}
+                                >
+                                    <FlatListItem
+                                        boards={boards}
+                                        item={item}
+                                        index={index}
+                                        parentFlatList={this}
+                                        handleDelete={this.handleDelete}
+                                    />
+                                </TouchableOpacity>
+                            );
+                        }}
+                    ></FlatList>
+                </View>
                 <BigButton
                     message="Create a new leaderboard"
                     backgroundColor={DARK_BLUE}
@@ -104,6 +90,17 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
             </View>
         );
     }
+
+    handleDelete = (id: LeaderboardEntry) => {
+        deleteById(id.id);
+        const index = this.state.leaderboards.indexOf(id, 0);
+        if (index > -1) {
+            this.setState({
+                leaderboards: this.state.leaderboards.splice(index, 1)
+            });
+        }
+        this.forceUpdate();
+    };
 }
 
 {
