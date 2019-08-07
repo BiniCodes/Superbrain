@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { View, Picker } from 'react-native';
-import { LIGHT_GREEN } from '../constans';
 import Subject from './Subject';
-import GradesInput from './GradesInput';
 import DropDown from './DropDown';
 
 interface ILeaderboardProps {

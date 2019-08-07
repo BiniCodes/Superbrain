@@ -4,7 +4,7 @@ import Headline from '../components/Headline';
 import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
 import ContinueButtonBottom from '../components/ContinueButtonBottom';
 import WordsInput from '../components/WordsInput';
-import { LIGHT_GREEN } from '../constans';
+import { LIGHT_GREEN, DARK_BLUE } from '../constans';
 import DropDown from '../components/DropDown';
 
 interface IAdditionalQuestionsPageProps {
@@ -36,7 +36,7 @@ export default class AdditionalQuestions extends React.Component<IAdditionalQues
                         marginHorizontal={40}
                         fontSize={22}
                         height={40}
-                        borderColor={LIGHT_GREEN}
+                        borderColor={DARK_BLUE}
                         borderWidth={1}
                         placeholder="enter a fake name*"
                     />
@@ -49,7 +49,7 @@ export default class AdditionalQuestions extends React.Component<IAdditionalQues
                         marginHorizontal={40}
                     />
 
-                    <DropDown PossibleChoices={['5h<', '5h-10h', '>10h']} width={350} />
+                    <DropDown PossibleChoices={['5h<', '5h-10h', '>10h']} width={300} />
 
                     <Headline
                         message="Are you a male or female?"
@@ -59,7 +59,7 @@ export default class AdditionalQuestions extends React.Component<IAdditionalQues
                         marginHorizontal={40}
                     />
 
-                    <DropDown PossibleChoices={['male', 'female']} width={350} />
+                    <DropDown PossibleChoices={['male', 'female']} width={300} />
 
                     <Headline
                         message="Are other users allowed to see your profile?*"
@@ -69,7 +69,7 @@ export default class AdditionalQuestions extends React.Component<IAdditionalQues
                         marginHorizontal={40}
                     />
 
-                    <DropDown PossibleChoices={['Yes', 'No']} width={350} />
+                    <DropDown PossibleChoices={['Yes', 'No']} width={300} />
                 </View>
 
                 <ContinueButtonBottom handleOnPress={() => navigate('InterResult')} />
