@@ -3,11 +3,13 @@ import { Text, TouchableOpacity, View, StyleSheet, Alert } from 'react-native';
 import { NavigationParams, NavigationScreenProp, NavigationState, ScrollView, FlatList } from 'react-navigation';
 import BigButton from '../../components/BigButton';
 import CustomizeButton from '../../components/CustomizeButton';
-import { DARK_BLUE, DARK_GREEN } from '../../constans';
+import { DARK_BLUE, DARK_GREEN, LIGHT_YELLOW } from '../../constans';
 import { LeaderboardEntry } from '../../models/Leaderboard';
 import { getAll, deleteById } from '../../services/Server';
 import Swipeout from 'react-native-swipeout';
 import FlatListItem from '../../components/FlatListItem';
+import { SwipeListView } from 'react-native-swipe-list-view';
+
 interface IShowLeaderboardProps {
     id: string;
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -60,24 +62,27 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
         }
         return (
             <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-                <View style={{ flex: 1, marginTop: 22 }}>
+                <View style={{ height: 30 }}>
+                    <Text style={{ fontSize: 16, textAlign: 'center' }}>your leaderboard code, swipe to edit</Text>
+                </View>
+                <View style={{ flex: 1 }}>
                     <FlatList
                         data={boards}
                         renderItem={({ item, index }) => {
-                            //console.log(`Item = ${JSON.stringify(item)}, index = ${index}`);
                             return (
-                                <TouchableOpacity
-                                    key={item.id}
+                                // <TouchableOpacity
+                                //     key={item.id}
+                                //     onPressOut={() => navigate('ShowLeaderboard', { id: item.id })}
+                                // >
+                                <FlatListItem
+                                    boards={boards}
+                                    item={item}
+                                    index={index}
+                                    parentFlatList={this}
+                                    handleDelete={this.handleDelete}
                                     onPressOut={() => navigate('ShowLeaderboard', { id: item.id })}
-                                >
-                                    <FlatListItem
-                                        boards={boards}
-                                        item={item}
-                                        index={index}
-                                        parentFlatList={this}
-                                        handleDelete={this.handleDelete}
-                                    />
-                                </TouchableOpacity>
+                                />
+                                // </TouchableOpacity>
                             );
                         }}
                     ></FlatList>

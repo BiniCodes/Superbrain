@@ -1,6 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { NavigationParams, NavigationScreenProp, NavigationState } from 'react-navigation';
+import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
 import CustomizeButton from '../components/CustomizeButton';
 import { DARK_GREEN } from '../constans';
 
@@ -12,6 +13,7 @@ export default class AddingGrades extends React.Component<IProfilePageProps> {
     public static navigationOptions = {
         title: 'Max-Planck-Schule Kiel Q1.c'
     };
+
     public render() {
         const { navigate } = this.props.navigation;
         return (

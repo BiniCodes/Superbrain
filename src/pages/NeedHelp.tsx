@@ -59,7 +59,7 @@ export default class NeedHelp extends React.Component<INeedHelpPageProps> {
                     <InstructionButton
                         message="List of all your leaderboards"
                         backgroundColor={DARK_BLUE}
-                        handleOnPress={() => navigate('ListLeaderboards')}
+                        handleOnPress={() => navigate('ListLeaderBoards')}
                     />
                     <Text style={styles.DescriptionText}>
                         This is where you can create your own leaderboard and also see in which leaderboard you are

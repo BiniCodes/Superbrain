@@ -10,6 +10,7 @@ interface IFlatListItemProps {
     parentFlatList: any;
     item: LeaderboardEntry;
     handleDelete: (id: LeaderboardEntry) => void;
+    onPressOut: () => void;
 }
 
 interface IFlatListItemState {
@@ -65,6 +66,14 @@ export default class FlatListItem extends Component<IFlatListItemProps, IFlatLis
                     },
                     text: 'Delete',
                     type: 'delete'
+                },
+                {
+                    onPress: () => {
+                        const deletingRow = this.state.activeRowKey;
+                        console.log('hello');
+                        this.props.onPressOut();
+                    },
+                    text: 'edit'
                 }
             ],
             rowId: this.props.index,
