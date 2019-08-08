@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View, StyleSheet, Alert } from 'react-native';
-import { DARK_BLUE, LIGHT_GREEN } from '../constans';
+import { DARK_BLUE, LIGHT_GREEN, LIGHT_YELLOW } from '../constans';
 import { LeaderboardEntry } from '../models/Leaderboard';
 import Swipeout from 'react-native-swipeout';
 
@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
     flatListItem: {
         color: 'white',
         padding: 10,
-        fontSize: 16
+        fontSize: 16,
+        marginTop: 18
     }
 });
 
@@ -81,32 +82,41 @@ export default class FlatListItem extends Component<IFlatListItemProps, IFlatLis
         };
         return (
             <Swipeout {...swipeSettings}>
+                {/*Wrap to make it line column */}
                 <View
                     style={{
                         flex: 1,
                         flexDirection: 'column'
                     }}
                 >
+                    {/*Color */}
+
                     <View
                         style={{
                             flex: 1,
                             flexDirection: 'row',
-                            backgroundColor: this.props.index % 2 == 0 ? DARK_BLUE : LIGHT_GREEN
+                            // backgroundColor: this.props.index % 2 == 0 ? DARK_BLUE : LIGHT_GREEN
+                            backgroundColor: DARK_BLUE
                         }}
                     >
+                        {/*Inhalt*/}
                         <View
                             style={{
                                 flex: 1,
-                                flexDirection: 'column',
-                                height: 100
+                                flexDirection: 'row',
+                                height: 80,
+                                justifyContent: 'space-between'
                             }}
                         >
                             <Text style={styles.flatListItem}>{this.props.item.name}</Text>
+                            <Text style={styles.flatListItem}>18</Text>
+                            <Text style={styles.flatListItem}>10</Text>
                         </View>
                     </View>
+                    {/*Abstand zwischen den Leaderboards */}
                     <View
                         style={{
-                            height: 1,
+                            height: 2,
                             backgroundColor: 'white'
                         }}
                     ></View>

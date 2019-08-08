@@ -25,6 +25,7 @@ interface IMidSizeButtonScreenProps {
     borderRadius?: number;
     borderWidth?: number;
     borderColor?: string;
+    color?: string;
 }
 
 export default class CustomizeButton extends Component<IMidSizeButtonScreenProps> {
@@ -41,6 +42,7 @@ export default class CustomizeButton extends Component<IMidSizeButtonScreenProps
         const marginTop = this.props.marginTop ? this.props.marginTop : MARGIN_DEFAULT;
         const borderWidth = this.props.borderWidth ? this.props.borderWidth : BORDERWIDTH_DEFAULT;
         const borderColor = this.props.borderColor ? this.props.borderColor : BORDERCOLOR_DEFAULT;
+        const color = this.props.color ? this.props.color : '#000000'; //black
         return (
             <TouchableOpacity onPress={this.props.handleOnPress} activeOpacity={2}>
                 <View
@@ -59,7 +61,8 @@ export default class CustomizeButton extends Component<IMidSizeButtonScreenProps
                     <Text
                         style={{
                             fontSize: fontSize,
-                            textAlign: textAlign
+                            textAlign: textAlign,
+                            color: color
                         }}
                     >
                         {message}

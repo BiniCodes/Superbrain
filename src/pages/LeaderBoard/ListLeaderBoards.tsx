@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { Text, TouchableOpacity, View, StyleSheet, Alert } from 'react-native';
-import { NavigationParams, NavigationScreenProp, NavigationState, ScrollView, FlatList } from 'react-navigation';
+import { Text, View } from 'react-native';
+import { NavigationParams, NavigationScreenProp, NavigationState, FlatList } from 'react-navigation';
 import BigButton from '../../components/BigButton';
-import CustomizeButton from '../../components/CustomizeButton';
-import { DARK_BLUE, DARK_GREEN, LIGHT_YELLOW } from '../../constans';
+import { DARK_BLUE } from '../../constans';
 import { LeaderboardEntry } from '../../models/Leaderboard';
 import { getAll, deleteById } from '../../services/Server';
-import Swipeout from 'react-native-swipeout';
 import FlatListItem from '../../components/FlatListItem';
-import { SwipeListView } from 'react-native-swipe-list-view';
 
 interface IShowLeaderboardProps {
     id: string;
@@ -62,18 +59,16 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
         }
         return (
             <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-                <View style={{ height: 30 }}>
-                    <Text style={{ fontSize: 16, textAlign: 'center' }}>your leaderboard code, swipe to edit</Text>
+                <View style={{ height: 30, flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <Text style={{ fontSize: 16 }}>leaderboard code</Text>
+                    <Text style={{ fontSize: 16 }}>user</Text>
+                    <Text style={{ fontSize: 16 }}>subjects</Text>
                 </View>
                 <View style={{ flex: 1 }}>
                     <FlatList
                         data={boards}
                         renderItem={({ item, index }) => {
                             return (
-                                // <TouchableOpacity
-                                //     key={item.id}
-                                //     onPressOut={() => navigate('ShowLeaderboard', { id: item.id })}
-                                // >
                                 <FlatListItem
                                     boards={boards}
                                     item={item}
@@ -82,7 +77,6 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
                                     handleDelete={this.handleDelete}
                                     onPressOut={() => navigate('ShowLeaderboard', { id: item.id })}
                                 />
-                                // </TouchableOpacity>
                             );
                         }}
                     ></FlatList>

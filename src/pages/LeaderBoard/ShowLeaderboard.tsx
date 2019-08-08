@@ -6,6 +6,9 @@ import { http } from '../../services/Server';
 import { ScrollView } from 'react-native-gesture-handler';
 import Subject from '../../components/Subject';
 import NumberInput from '../../components/NumberInput';
+import DropDown from '../../components/DropDown';
+import CustomizeButton from '../../components/CustomizeButton';
+import { DARK_BLUE } from '../../constans';
 
 interface IShowLeaderboardProps {
     id: string;
@@ -55,20 +58,52 @@ export default class ShowLeaderboard extends React.Component<IShowLeaderboardPro
                 </View>
                 <ScrollView style={{ flex: 1 }}>
                     {this.state.leaderboard.subjects.map(item => {
-                        return (
-                            <View
-                                key={item.name}
-                                style={{
-                                    flexDirection: 'row',
-                                    justifyContent: 'space-between'
-                                }}
-                            >
-                                <Subject message={item.name} />
-                                <NumberInput />
-                            </View>
-                        );
+                        //render only subjects that is picked
+                        if (item.status) {
+                            return (
+                                <View
+                                    key={item.name}
+                                    style={{
+                                        flexDirection: 'row',
+                                        justifyContent: 'space-between'
+                                    }}
+                                >
+                                    <Subject message={item.name} />
+                                    <DropDown
+                                        PossibleChoices={[
+                                            '1',
+                                            '2',
+                                            '3',
+                                            '4',
+                                            '5',
+                                            '6',
+                                            '7',
+                                            '8',
+                                            '9',
+                                            '10',
+                                            '11',
+                                            '12',
+                                            '13'
+                                        ]}
+                                        width={100}
+                                    />
+                                </View>
+                            );
+                        }
                     })}
                 </ScrollView>
+                <View style={{ height: 70 }}>
+                    <CustomizeButton
+                        message="Save"
+                        marginHorizontal={70}
+                        paddingVertical={10}
+                        backgroundColor={DARK_BLUE}
+                        color="#ffffff"
+                        textAlign="center"
+                        borderRadius={4}
+                        borderColor={DARK_BLUE}
+                    />
+                </View>
             </View>
         );
     }
