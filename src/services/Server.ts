@@ -32,6 +32,16 @@ export const saveToServer = (data: LeaderboardEntry) => {
     });
 };
 
+export const updateItem = (data: LeaderboardEntry) => {
+    const requestHeaders: HeadersInit = new Headers();
+    requestHeaders.set('Content-Type', 'application/json');
+    return fetch(domain + '/' + data.id, {
+        method: 'PUT',
+        headers: requestHeaders,
+        body: JSON.stringify(data)
+    });
+};
+
 export const http = async (id: string): Promise<LeaderboardEntry> => {
     return new Promise(resolve => {
         fetch(domain + '/' + id)

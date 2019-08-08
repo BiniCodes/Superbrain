@@ -110,7 +110,10 @@ export default class FlatListItem extends Component<IFlatListItemProps, IFlatLis
                         >
                             <Text style={styles.flatListItem}>{this.props.item.name}</Text>
                             <Text style={styles.flatListItem}>18</Text>
-                            <Text style={styles.flatListItem}>10</Text>
+                            <Text style={styles.flatListItem}>
+                                {/* show quantity of subjects that were selected */}
+                                {this.props.item.subjects.filter(d => d.status).length}
+                            </Text>
                         </View>
                     </View>
                     {/*Abstand zwischen den Leaderboards */}

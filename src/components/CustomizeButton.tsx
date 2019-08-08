@@ -10,6 +10,7 @@ import {
     BORDERWIDTH_DEFAULT,
     BORDERCOLOR_DEFAULT
 } from '../constans';
+import { LeaderboardEntry } from '../models/Leaderboard';
 
 interface IMidSizeButtonScreenProps {
     message: string;

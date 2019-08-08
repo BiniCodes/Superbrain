@@ -59,7 +59,7 @@ export default class ListLeaderBoards extends React.Component<IShowLeaderboardPr
         }
         return (
             <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-                <View style={{ height: 30, flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View style={{ height: 30, flexDirection: 'row', justifyContent: 'space-between', marginTop: 10 }}>
                     <Text style={{ fontSize: 16 }}>leaderboard code</Text>
                     <Text style={{ fontSize: 16 }}>user</Text>
                     <Text style={{ fontSize: 16 }}>subjects</Text>

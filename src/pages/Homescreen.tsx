@@ -24,8 +24,7 @@ export default class HomeScreen extends React.Component<IHomeScreenProps> {
                     style={{ width: 120, height: 120, alignSelf: 'center' }}
                 />
                 <Headline
-                    message="This app is for all people who want
-                      to compare their grades anonymously"
+                    message="This app is for all people who want to compare their grades anonymously"
                     textAlign="center"
                     marginHorizontal={40}
                     marginTop={10}

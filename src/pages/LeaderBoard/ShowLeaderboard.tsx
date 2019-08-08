@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationParams, NavigationScreenProp, NavigationState } from 'react-navigation';
 import { LeaderboardEntry } from '../../models/Leaderboard';
-import { http } from '../../services/Server';
+import { http, getAll, updateItem } from '../../services/Server';
 import { ScrollView } from 'react-native-gesture-handler';
 import Subject from '../../components/Subject';
 import NumberInput from '../../components/NumberInput';
@@ -102,6 +102,7 @@ export default class ShowLeaderboard extends React.Component<IShowLeaderboardPro
                         textAlign="center"
                         borderRadius={4}
                         borderColor={DARK_BLUE}
+                        handleOnPress={() => updateItem(this.state.leaderboard)}
                     />
                 </View>
             </View>
