@@ -92,7 +92,7 @@ export default class ShowLeaderboard extends React.Component<IShowLeaderboardPro
                         textAlign="center"
                         borderRadius={4}
                         borderColor={DARK_BLUE}
-                        handleOnPress={() => this.saveItem}
+                        handleOnPress={() => this.saveItem(this.state.leaderboard)}
                     />
                 </View>
             </View>

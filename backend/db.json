@@ -6,17 +6,17 @@
         {
           "name": "Biologie",
           "status": true,
-          "value": 6
+          "value": 10
         },
         {
           "name": "Chemie",
           "status": true,
-          "value": 12
+          "value": 10
         },
         {
           "name": "Physik",
           "status": true,
-          "value": 10
+          "value": 11
         },
         {
           "name": "Mathe",
@@ -111,118 +111,6 @@
         }
       ],
       "id": 3
-    },
-    {
-      "name": "JfvuvJ5efB",
-      "subjects": [
-        {
-          "name": "Biologie",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Chemie",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Physik",
-          "value": 1,
-          "status": false
-        },
-        {
-          "name": "Mathe",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Deutsch",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Englisch",
-          "value": 1,
-          "status": false
-        },
-        {
-          "name": "Französisch",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Spanisch",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Sport",
-          "value": 1,
-          "status": false
-        },
-        {
-          "name": "Kunst",
-          "value": 1,
-          "status": true
-        }
-      ],
-      "id": 4
-    },
-    {
-      "name": "Ouj6a9gSpc",
-      "subjects": [
-        {
-          "name": "Biologie",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Chemie",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Physik",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Mathe",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Deutsch",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Englisch",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Französisch",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Spanisch",
-          "value": 1,
-          "status": true
-        },
-        {
-          "name": "Sport",
-          "value": 1,
-          "status": false
-        },
-        {
-          "name": "Kunst",
-          "value": 1,
-          "status": false
-        }
-      ],
-      "id": 5
     }
   ]
 }
