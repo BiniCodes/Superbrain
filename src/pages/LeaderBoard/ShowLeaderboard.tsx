@@ -36,6 +36,7 @@ export default class ShowLeaderboard extends React.Component<IShowLeaderboardPro
     }
 
     public render() {
+        const { navigate } = this.props.navigation;
         if (!this.state.leaderboard) {
             return (
                 <View>
@@ -91,7 +92,7 @@ export default class ShowLeaderboard extends React.Component<IShowLeaderboardPro
                         textAlign="center"
                         borderRadius={4}
                         borderColor={DARK_BLUE}
-                        handleOnPress={() => this.saveItem(this.state.leaderboard)}
+                        handleOnPress={() => this.saveItem}
                     />
                 </View>
             </View>
@@ -108,7 +109,8 @@ export default class ShowLeaderboard extends React.Component<IShowLeaderboardPro
     };
 
     saveItem = (board: LeaderboardEntry) => {
-        //  console.log(board);
         updateItem(board);
+        console.log('Checking if it reached this');
+        this.props.navigation.navigate('ListLeaderBoards');
     };
 }

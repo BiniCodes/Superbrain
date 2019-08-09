@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import { View, Picker } from 'react-native';
-import {
-    MARGIN_DEFAULT,
-    FONTSIZE_DEFAULT,
-    TEXTALIGN_DEFAULT,
-    DROPDOWN_HEIGHT_DEFAULT,
-    DROPDOWN_WIDTH_DEFAULT
-} from '../constans';
+import { MARGIN_DEFAULT, DROPDOWN_HEIGHT_DEFAULT, DROPDOWN_WIDTH_DEFAULT } from '../constans';
 import { LeaderboardEntry, Item } from '../models/Leaderboard';
 
 interface IDropDownProps {
@@ -16,7 +10,7 @@ interface IDropDownProps {
     width?: number;
     alignSelf?: string;
     item?: Item;
-    onChange?: (data: Item) => void;
+    onChange: (data: Item) => void;
 }
 
 interface IDropDownState {
@@ -31,8 +25,8 @@ export default class DropDown extends Component<IDropDownProps, IDropDownState> 
         };
     }
     PossibleChoices = this.props.PossibleChoices;
+    //create an array that all created Picker will be pushed in. This Component return an array!
     renderItem() {
-        //create an array that all created Picker will be pushed in. This Component return an array!
         let ReturnedArray = [];
         for (let item of this.PossibleChoices) {
             ReturnedArray.push(<Picker.Item key={item} label={item.toString()} value={item} />);

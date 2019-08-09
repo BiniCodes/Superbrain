@@ -4,6 +4,7 @@ import Headline from '../components/Headline';
 import { NavigationScreenProp, NavigationState, NavigationParams, ScrollView } from 'react-navigation';
 import ContinueButtonBottom from '../components/ContinueButtonBottom';
 import DropDown from '../components/DropDown';
+import DropDownText from '../components/DropDownText';
 
 interface IInterQuest2PageProps {
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -32,7 +33,7 @@ export default class InterQuest2 extends React.Component<IInterQuest2PageProps> 
                         marginBottom={50}
                     />
 
-                    <DropDown
+                    <DropDownText
                         PossibleChoices={[
                             'Baden-Württemberg',
                             'Bayern',
