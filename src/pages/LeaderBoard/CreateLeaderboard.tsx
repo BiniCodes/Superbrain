@@ -36,47 +36,47 @@ const getItems = (): Item[] => {
         },
         {
             name: 'Chemie',
-            value: 2,
+            value: 1,
             status: false
         },
         {
             name: 'Physik',
-            value: 3,
+            value: 1,
             status: false
         },
         {
             name: 'Mathe',
-            value: 4,
+            value: 1,
             status: false
         },
         {
             name: 'Deutsch',
-            value: 5,
+            value: 1,
             status: false
         },
         {
             name: 'Englisch',
-            value: 6,
+            value: 1,
             status: false
         },
         {
             name: 'Französisch',
-            value: 7,
+            value: 1,
             status: false
         },
         {
             name: 'Spanisch',
-            value: 8,
+            value: 1,
             status: false
         },
         {
             name: 'Sport',
-            value: 9,
+            value: 1,
             status: false
         },
         {
             name: 'Kunst',
-            value: 10,
+            value: 1,
             status: false
         }
     ];

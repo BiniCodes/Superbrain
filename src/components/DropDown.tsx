@@ -7,6 +7,7 @@ import {
     DROPDOWN_HEIGHT_DEFAULT,
     DROPDOWN_WIDTH_DEFAULT
 } from '../constans';
+import { LeaderboardEntry, Item } from '../models/Leaderboard';
 
 interface IDropDownProps {
     PossibleChoices: string[];
@@ -14,12 +15,21 @@ interface IDropDownProps {
     height?: number;
     width?: number;
     alignSelf?: string;
+    item?: Item;
+    onChange?: (data: Item) => void;
 }
 
-export default class DropDown extends Component<IDropDownProps> {
-    state = {
-        year_default: ''
-    };
+interface IDropDownState {
+    year_default: number;
+}
+
+export default class DropDown extends Component<IDropDownProps, IDropDownState> {
+    constructor(props: IDropDownProps) {
+        super(props);
+        this.state = {
+            year_default: 1
+        };
+    }
     PossibleChoices = this.props.PossibleChoices;
     renderItem() {
         let ReturnedArray = [];
@@ -27,6 +37,14 @@ export default class DropDown extends Component<IDropDownProps> {
             ReturnedArray.push(<Picker.Item key={item} label={item} value={item} />);
         }
         return ReturnedArray;
+    }
+
+    public componentWillMount() {
+        if (this.props.item) {
+            const value = this.props.item.value;
+            console.log('DROPDOWN value', value);
+            this.setState({ year_default: value });
+        }
     }
 
     render() {
@@ -38,17 +56,26 @@ export default class DropDown extends Component<IDropDownProps> {
         const alignSelf = this.props.alignSelf ? this.props.alignSelf : 'center';
         return (
             <Picker
-                selectedValue={this.state.year_default}
+                selectedValue={this.state.year_default.toString()}
                 style={{
                     height: height,
                     width: width,
                     alignSelf: alignSelf,
                     marginTop: marginTop
                 }}
-                onValueChange={itemValue => this.setState({ year_default: itemValue })}
+                onValueChange={this.handleChange}
+                //push year_default in grades array
+                //export the array
+                //ShowLeaderboard gets the array and push it to the server
             >
                 {this.renderItem()}
             </Picker>
         );
     }
+
+    handleChange = (itemValue: any) => {
+        this.setState({ year_default: itemValue });
+        const newItem = { ...this.props.item, value: +itemValue };
+        this.props.onChange(newItem);
+    };
 }
