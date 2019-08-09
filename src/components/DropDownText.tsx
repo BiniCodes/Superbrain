@@ -10,7 +10,7 @@ import {
 import { LeaderboardEntry, Item } from '../models/Leaderboard';
 
 interface IDropDownProps {
-    PossibleChoices: number[]; //number
+    PossibleChoices: string[]; //number
     marginTop?: number;
     height?: number;
     width?: number;
@@ -32,10 +32,9 @@ export default class DropDown extends Component<IDropDownProps, IDropDownState> 
     }
     PossibleChoices = this.props.PossibleChoices;
     renderItem() {
-        //create an array that all created Picker will be pushed in. This Component return an array!
         let ReturnedArray = [];
         for (let item of this.PossibleChoices) {
-            ReturnedArray.push(<Picker.Item key={item} label={item.toString()} value={item} />);
+            ReturnedArray.push(<Picker.Item key={item} label={item} value={item} />);
         }
         return ReturnedArray;
     }
@@ -57,7 +56,7 @@ export default class DropDown extends Component<IDropDownProps, IDropDownState> 
         const alignSelf = this.props.alignSelf ? this.props.alignSelf : 'center';
         return (
             <Picker
-                selectedValue={this.state.year_default} //toString() needs to be gone
+                selectedValue={this.state.year_default.toString()} //toString() needs to be gone
                 style={{
                     height: height,
                     width: width,
@@ -73,7 +72,7 @@ export default class DropDown extends Component<IDropDownProps, IDropDownState> 
 
     handleChange = (itemValue: any) => {
         this.setState({ year_default: itemValue });
-        const newItem = { ...this.props.item, value: itemValue }; //"+" converts string to number
+        const newItem = { ...this.props.item, value: +itemValue }; //"+" converts string to number
         this.props.onChange(newItem);
     };
 }

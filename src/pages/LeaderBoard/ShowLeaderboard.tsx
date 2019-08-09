@@ -9,6 +9,7 @@ import NumberInput from '../../components/NumberInput';
 import DropDown from '../../components/DropDown';
 import CustomizeButton from '../../components/CustomizeButton';
 import { DARK_BLUE } from '../../constans';
+import DropDownGrades from '../../components/DropDownText';
 
 interface IShowLeaderboardProps {
     id: string;
@@ -72,23 +73,7 @@ export default class ShowLeaderboard extends React.Component<IShowLeaderboardPro
                                     <DropDown
                                         onChange={this.onDropDownChange}
                                         item={item}
-                                        PossibleChoices={[
-                                            '1',
-                                            '2',
-                                            '3',
-                                            '4',
-                                            '5',
-                                            '6',
-                                            '7',
-                                            '8',
-                                            '9',
-                                            '10',
-                                            '11',
-                                            '12',
-                                            '13',
-                                            '14',
-                                            '15'
-                                        ]}
+                                        PossibleChoices={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
                                         width={100}
                                     />
                                 </View>
@@ -115,9 +100,6 @@ export default class ShowLeaderboard extends React.Component<IShowLeaderboardPro
 
     onDropDownChange = (item: Item) => {
         console.log(item);
-
-        //  items: this.state.items.map(x => (x.name === item.name ? { ...item, status: !item.status } : x))
-
         const newItem = this.state.leaderboard.subjects.map(entry => (entry.name === item.name ? { ...item } : entry));
         let pp = this.state.leaderboard;
         pp.subjects = newItem;

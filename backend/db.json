@@ -10,8 +10,8 @@
         },
         {
           "name": "Chemie",
-          "value": 1,
-          "status": true
+          "status": true,
+          "value": 12
         },
         {
           "name": "Physik",
@@ -55,6 +55,174 @@
         }
       ],
       "id": 1
+    },
+    {
+      "name": "mLscm8DxEm",
+      "subjects": [
+        {
+          "name": "Biologie",
+          "status": true,
+          "value": 6
+        },
+        {
+          "name": "Chemie",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Physik",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Mathe",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Deutsch",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Englisch",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Französisch",
+          "status": true,
+          "value": 10
+        },
+        {
+          "name": "Spanisch",
+          "status": true,
+          "value": 12
+        },
+        {
+          "name": "Sport",
+          "status": true,
+          "value": 14
+        },
+        {
+          "name": "Kunst",
+          "status": true,
+          "value": 15
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "PqzIWdt1J7",
+      "subjects": [
+        {
+          "name": "Biologie",
+          "status": true,
+          "value": 6
+        },
+        {
+          "name": "Chemie",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Physik",
+          "status": true,
+          "value": 7
+        },
+        {
+          "name": "Mathe",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Deutsch",
+          "status": true,
+          "value": 13
+        },
+        {
+          "name": "Englisch",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Französisch",
+          "status": true,
+          "value": 15
+        },
+        {
+          "name": "Spanisch",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Sport",
+          "status": true,
+          "value": 2
+        },
+        {
+          "name": "Kunst",
+          "value": 1,
+          "status": false
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "F5YxUZ4oqo",
+      "subjects": [
+        {
+          "name": "Biologie",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Chemie",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Physik",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Mathe",
+          "status": true,
+          "value": 2
+        },
+        {
+          "name": "Deutsch",
+          "status": true,
+          "value": 10
+        },
+        {
+          "name": "Englisch",
+          "status": true,
+          "value": 12
+        },
+        {
+          "name": "Französisch",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Spanisch",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Sport",
+          "value": 1,
+          "status": false
+        },
+        {
+          "name": "Kunst",
+          "value": 1,
+          "status": false
+        }
+      ],
+      "id": 4
     }
   ]
 }
